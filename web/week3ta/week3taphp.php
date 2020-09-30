@@ -16,7 +16,7 @@
 		<br>
 		Continents Visited: <?php 
 		foreach ($_POST["checkbox[]"] as $value) {
-			echo $value . ' <br>';
+			echo "$value <br>";
 		} 
 		 ;?>
 	</body>
