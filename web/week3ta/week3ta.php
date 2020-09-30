@@ -12,50 +12,46 @@
 			Email: <input type="email" name="email">
 			<br>
 			<br>
-
+		
+			Major:
 			<?php
 				$major = array("CS-Computer Science", "WDD-Web Design and Development", "CIT-Computer Information Technology", "CE-Computer Engineering");
 				foreach($major as $value) {
 					echo "<input type='radio' name='Major' value='$value'>$value <br>";
 				}
 			?> 
-			Major:
-			<input type="radio" name="Major" value="Computer Science"> <label>Computer Science </label>
-			<input type="radio" name="Major" value="Web Design and Development"> <label>Web Design and Development </label>
-			<input type="radio" name="Major" value="Computer Information Technology"> <label>Computer Information Technology </label>
-			<input type="radio" name="Major" value="Computer Engineering"> <label>Computer Engineering </label>
 			<br>
-			<br>
+
 			<label>Comments:</label> <textarea name="Comments" rows="10" cols="30"></textarea>
 			<br>
 			<br>
 			
 			<label>North America</label>
-			<input type="checkbox" name="checkbox[]" value="North-America">
+			<input type="checkbox" name="checkbox[]" value="NA">
 			<br>
 			
 			<label>South America</label>
-			<input type="checkbox" name="checkbox[]" value="South-America">
+			<input type="checkbox" name="checkbox[]" value="SA">
 			<br>
 
 			<label>Europe</label>
-			<input type="checkbox" name="checkbox[]" value="Europe">
+			<input type="checkbox" name="checkbox[]" value="EU">
 			<br>
 
 			<label>Africa</label>
-			<input type="checkbox" name="checkbox[]" value="Africa">
+			<input type="checkbox" name="checkbox[]" value="AF">
 			<br>
 
 			<label>Asia</label>
-			<input type="checkbox" name="checkbox[]" value="Asia">
+			<input type="checkbox" name="checkbox[]" value="AS">
 			<br>
 
 			<label>Australia</label>
-			<input type="checkbox" name="checkbox[]" value="Australia">
+			<input type="checkbox" name="checkbox[]" value="AU">
 			<br>
 			
 			<label>Antarctica</label>
-			<input type="checkbox" name="checkbox[]" value="Antarctica">
+			<input type="checkbox" name="checkbox[]" value="AN">
 
 			<br>
 			<br>

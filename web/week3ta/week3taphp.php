@@ -16,9 +16,18 @@
 		<br>
 		Continents Visited: 
 		<?php 
+		$array = array(
+			"NA" => "North America",
+			"SA" => "South America",
+			"EU" => "Europe",
+			"AS" => "Asia",
+			"AU" => "Australia",
+			"AF" => "Africa",
+			"AN" => "Antarctica"
+		);
 		foreach ($_POST["checkbox"] as $value) {
-			echo "$value <br>";
-		} 
-		 ;?>
+			echo "$array[$value] <br>";
+		}
+		 ?>
 	</body>
 </html>
