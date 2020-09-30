@@ -12,5 +12,12 @@
 		<br>
 		<br>
 		Comments: <?php echo $_POST["Comments"]; ?>
+		<br>
+		<br>
+		Continents Visited: <?php 
+		foreach ($_POST["checkbox[]"] as $value) {
+			echo '$value <br>';
+		} 
+		 ;?>
 	</body>
 </html>
