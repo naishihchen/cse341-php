@@ -14,7 +14,7 @@
 				<p>Hello! My name is Nai-Shih Chen, but you can call me Naomi! My favorite thing to do is travelling, and I've done quite a bit. I've been to over 11 different countries, mostly throughout Asia and I'm now living in the USA with my husband. I'm studying PHP to learn how to make my own dynamic websites and hope to be successful as a graphic designer. Thanks for giving my page a vist!</p>
 			</div>
 			<div id="assignments" class="hello">
-				<a href="home.php">Assignments</a>
+				<a href="assignments.php">Assignments</a>
 			</div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 		</main>
