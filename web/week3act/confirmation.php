@@ -18,7 +18,7 @@ $action = filter_input(INPUT_POST, 'action');
         $_SESSION['customers']['state'] = 'State: '.$state;
         $_SESSION['customers']['zip'] = 'Zip Code: '.$zip;
 
-        var_dump($_SESSION['customers']);
+        var_dump($_SESSION['customers']['street']);
 
        //  $customers = $_SESSION['customers'];
        //  $customerSummary = "<div>

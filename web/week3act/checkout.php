@@ -18,19 +18,19 @@
 			<div id="soaps" class="hello">
 				<form id="checkout-form" action='confirmation.php' method='post'>
 					<label for="street">Street: </label>
-					<input type="text" name="street">
+					<input id="street" type="text" name="street">
 					
 					<label for="unit">Unit #: </label>
-					<input type="text" name="unit">
+					<input id="unit" type="text" name="unit">
 					
 					<label for="city">City: </label>
-					<input type="text" name="city">
+					<input id="city" type="text" name="city">
 					
 					<label for="state">State: </label>
-					<input type="text" name="state">
+					<input id="state" type="text" name="state">
 					
 					<label for="zip">Zip Code: </label>
-					<input type="text" name="zip">
+					<input id="zip" type="text" name="zip">
 				
 					<input type='submit' value='Checkout'><input type='hidden' name='action' value='checkout'>
 				</form>
