@@ -32,14 +32,14 @@ $action = filter_input(INPUT_POST, 'action');
        $productSummary = "<div><div><ul>";
            $products = $_SESSION['product'];
 
-        foreach($products as $key=>$product){
-           $productSummary .= 
-            "<li>"
-            . $product ."</li>";
-            }
-            $productSummary .= "</ul><ul>";
+        // foreach($products as $key=>$product){
+        //    $productSummary .= 
+        //     "<li>"
+        //     . $product ."</li>";
+        //     }
+        //     $productSummary .= "</ul><ul>";
 
-            $productSummary .= "</ul></div></div>";
+        //     $productSummary .= "</ul></div></div>";
       break;
       default:
     break;
