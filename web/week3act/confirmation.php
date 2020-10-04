@@ -18,26 +18,28 @@ $action = filter_input(INPUT_POST, 'action');
         $_SESSION['customers']['state'] = 'State: '.$state;
         $_SESSION['customers']['zip'] = 'Zip Code: '.$zip;
 
-        $customers = $_SESSION['customers'];
-        $customerSummary = "<div>
-                                <div>";
+        var_dump($_SESSION['customers']);
 
-        $customerSummary .= 
-         "<p>". $customers ."</p>";
-         }
-       $customerSummary .= "</div></div>";
+       //  $customers = $_SESSION['customers'];
+       //  $customerSummary = "<div>
+       //                          <div>";
 
-       $productSummary = "<div><div><ul>";
-           $products = $_SESSION['product'];
+       //  $customerSummary .= 
+       //   "<p>". $customers ."</p>";
+       //   }
+       // $customerSummary .= "</div></div>";
 
-        foreach($products as $key=>$product){
-           $productSummary .= 
-            "<li>"
-            . $product ."</li>";
-            }
-            $productSummary .= "</ul><ul>";
+       // $productSummary = "<div><div><ul>";
+       //     $products = $_SESSION['product'];
 
-            $productSummary .= "</ul></div></div>";
+       //  foreach($products as $key=>$product){
+       //     $productSummary .= 
+       //      "<li>"
+       //      . $product ."</li>";
+       //      }
+       //      $productSummary .= "</ul><ul>";
+
+       //      $productSummary .= "</ul></div></div>";
       break;
       default:
     break;
