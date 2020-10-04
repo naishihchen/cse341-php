@@ -16,7 +16,7 @@
 		<main>
 			<h2>Checkout</h2>
 			<div id="soaps" class="hello">
-				<form action='confirmation.php' method='post'>
+				<form id="checkout-form" action='confirmation.php' method='post'>
 					<label for="street">Street: </label>
 					<input type="text" name="street">
 					
