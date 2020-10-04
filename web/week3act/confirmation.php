@@ -5,7 +5,7 @@ $action = filter_input(INPUT_POST, 'action');
   $action = filter_input(INPUT_GET, 'action');
  }
  switch($action){
-    case 'complete':
+    case 'checkout':
         $street = filter_input(INPUT_POST, 'street', FILTER_SANITIZE_STRING);
         $unit = filter_input(INPUT_POST, 'unit', FILTER_SANITIZE_STRING);
         $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
