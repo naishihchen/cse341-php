@@ -133,3 +133,8 @@ footer {
 	width: 100px;
 	height: 100px;
 }
+
+#checkout-form {
+	display: flex;
+	flex-direction: column;
+}
