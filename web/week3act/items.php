@@ -26,6 +26,8 @@ switch ($action){
   break;
 }
 
+var_dump($_SESSION['cart']);
+
 ?>
 
 <!DOCTYPE html>
