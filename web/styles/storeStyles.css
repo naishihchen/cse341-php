@@ -1,0 +1,123 @@
+body {
+	background-color: #498efc;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px;
+	padding: 0;
+	background-color: #bad5ff;
+	width: 90%;
+	border-radius: 10px;
+}
+
+header {
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
+	width: 100%;
+	background-color: #bad5ff;
+	border-radius: 10px;
+}
+
+header h1 {
+	margin: 10vw;
+}
+
+#cart {
+	margin: 10vw
+}
+
+h1 {
+	margin: 0;
+}
+
+h2 {
+	margin: 0;
+}
+
+#intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#intro p {
+	width: 40vw;
+	text-align: center;
+}
+
+img {
+	margin: 10px;
+	height: 30vw;
+}
+
+#assignments {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid black 3px;
+	width: 10vw;
+	height: 5vw;
+	margin: 10px;
+	font-size: 1vw;
+}
+
+#assignments a {
+	background-size: 10vw;
+	padding: 20px;
+	text-decoration: none;
+	color: black;
+}
+
+#assignments a:hover {
+	background-color: black;
+	color: white;
+}
+
+.hello {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-top: 3px solid gray;
+}
+
+#soaps {
+	width: 100%;
+}
+
+.soap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5vw;
+}
+
+.soap button {
+	height: 100px;
+}

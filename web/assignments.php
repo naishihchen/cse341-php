@@ -8,7 +8,10 @@
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
 		<main>
-			<h2>Coming Soon!</h2>
+			<h2>Assignments</h2>
+			<a href="week2ta.html">Week 2 Team Activity</a>
+			<a href="week3ta/week3ta.php">Week 3 Team Activity</a>
+			<a href="week3act/items.php">Week 3 Assignment</a>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 		</main>
 	</body>

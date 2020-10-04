@@ -1,17 +1,17 @@
 <html>
-	<head>
-	</head>
+	
+
 	<body>
 		Name: <?php echo $_POST["name"]; ?>
 		<br>
 		<br>
-		Email: <a href="<?php echo $_POST["email"]; ?>"><?php echo $_POST["email"]; ?></a>
+		Email: <a href="mailto:<?php echo htmlspecialchars($_POST['email']); ?>"><?php echo $_POST["email"]; ?></a>
 		<br>
 		<br>
-		Major: <?php echo $_POST["Major"]; ?>
+		Major: <?php echo htmlspecialchars($_POST["Major"]); ?>
 		<br>
 		<br>
-		Comments: <?php echo $_POST["Comments"]; ?>
+		Comments: <?php echo htmlspecialchars($_POST["Comments"]); ?>
 		<br>
 		<br>
 		Continents Visited: 
@@ -26,7 +26,7 @@
 			"AN" => "Antarctica"
 		);
 		foreach ($_POST["checkbox"] as $value) {
-			echo "$array[$value] <br>";
+			echo $array[htmlspecialchars($value)] . "<br>";
 		}
 		 ?>
 	</body>
