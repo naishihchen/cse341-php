@@ -22,11 +22,11 @@
 	    					}
 						}
 					?>
-					<div id="progress-buttons">
+				</div>
+				<div id="progress-buttons">
 						<a href="items.php">Buy More</a>
 						<a href="checkout.php">Check Out</a>
 					</div>
-				</div>
 			</div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
 		</main>
