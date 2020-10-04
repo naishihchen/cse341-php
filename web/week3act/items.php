@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 
-	$cartArray = []
+	$cartArray = [];
 
 	// if(!isset($SESSION['products'])) {
 	// 	$_SESSION['products'] = $productArray;
@@ -35,7 +35,7 @@
 						<h3>Mint Soap</h3>
 						<p>This mint soap has a cool tingly shock that will revive you</p>
 					</div>
-					<button type="button" onclick="<?php array_push($productArray, "Mint Soap"); $_SESSION['cart'] = $cartArray; ?>">Add to Cart</button>
+					<button type="button" onclick="<?php array_push($cartArray, "Mint Soap"); $_SESSION['cart'] = $cartArray; ?>">Add to Cart</button>
 				</div>
 				<div class="soap">
 					<div class="description">
@@ -43,7 +43,7 @@
 						<h3>Oatmeal Soap</h3>
 						<p>This oatmeal soap has a warm yummy scent that will comfort you</p>
 					</div>
-					<button type="button" onclick="<?php array_push($productArray, "Mint Soap"); $_SESSION['cart'] = $cartArray; ?>">Add to Cart</button>
+					<button type="button" onclick="<?php array_push($cartArray, "Mint Soap"); $_SESSION['cart'] = $cartArray; ?>">Add to Cart</button>
 				</div>
 			</div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
