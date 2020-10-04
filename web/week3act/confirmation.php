@@ -57,6 +57,11 @@ $action = filter_input(INPUT_POST, 'action');
         <main>
             <h2>Confirmation</h2>
             <div id="soaps" class="hello">
+                <?php
+                        if(isset($customerSummary)){
+                            echo $customerSummary;
+                        }
+                    ?>
             </div>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
         </main>
