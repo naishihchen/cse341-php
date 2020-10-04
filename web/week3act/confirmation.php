@@ -42,7 +42,7 @@ $action = filter_input(INPUT_POST, 'action');
         //     $productSummary .= "</ul></div></div>";
       break;
       case 'cart':
-          include'cart.php';
+          header("cart.php");
           break;
       default:
     break;
