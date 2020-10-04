@@ -32,7 +32,11 @@
 					<label for="zip">Zip Code: </label>
 					<input id="zip" type="text" name="zip">
 				
-					<input type='submit' value='Checkout'><input type='hidden' name='action' value='checkout'>
+
+					<div id="progress-buttons">
+						<input type='submit' value='cart'><input type='hidden' name='action' value='cart'>
+						<input type='submit' value='Checkout'><input type='hidden' name='action' value='checkout'>
+					</div>
 				</form>
 			</div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
