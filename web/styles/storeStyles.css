@@ -127,5 +127,8 @@ footer {
 	justify-content: center;
 	align-items: center;
 	margin: 50px;
+}
+
+#progess-buttons a {	
 	padding: 30px;
 }
