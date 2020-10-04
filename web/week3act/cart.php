@@ -24,8 +24,8 @@
 					?>
 				</div>
 				<div id="progress-buttons">
-						<a href="items.php">Buy More</a>
-						<a href="checkout.php">Check Out</a>
+						<a id="a-button" href="items.php">Buy More</a>
+						<a id="a-button" href="checkout.php">Check Out</a>
 					</div>
 			</div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
