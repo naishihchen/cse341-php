@@ -28,7 +28,7 @@
 						<h3>Lavender Soap</h3>
 						<p>This lavender soap has a fresh flowery smell that will soothe you</p>
 					</div>
-					<button type="button" onclick="<?php array_push($cartArray, "Lavender Soap"); $_SESSION['cart'] = $cartArray; ?>">Add to Cart</button>
+					<button type="button" onclick="<?php array_push($cartArray, "Lavender Soap"); echo $cartArray[0]; $_SESSION['cart'] = $cartArray; ?>">Add to Cart</button>
 
 				</div>
 				<div class="soap">
