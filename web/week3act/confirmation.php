@@ -20,26 +20,26 @@ $action = filter_input(INPUT_POST, 'action');
 
         var_dump($_SESSION['customers']['street']);
 
-       //  $customers = $_SESSION['customers'];
-       //  $customerSummary = "<div>
-       //                          <div>";
+        $customers = $_SESSION['customers'];
+        $customerSummary = "<div>
+                                <div>";
 
-       //  $customerSummary .= 
-       //   "<p>". $customers ."</p>";
-       //   }
-       // $customerSummary .= "</div></div>";
+        $customerSummary .= 
+         "<p>". $customers ."</p>";
+         }
+       $customerSummary .= "</div></div>";
 
-       // $productSummary = "<div><div><ul>";
-       //     $products = $_SESSION['product'];
+       $productSummary = "<div><div><ul>";
+           $products = $_SESSION['product'];
 
-       //  foreach($products as $key=>$product){
-       //     $productSummary .= 
-       //      "<li>"
-       //      . $product ."</li>";
-       //      }
-       //      $productSummary .= "</ul><ul>";
+        foreach($products as $key=>$product){
+           $productSummary .= 
+            "<li>"
+            . $product ."</li>";
+            }
+            $productSummary .= "</ul><ul>";
 
-       //      $productSummary .= "</ul></div></div>";
+            $productSummary .= "</ul></div></div>";
       break;
       default:
     break;
