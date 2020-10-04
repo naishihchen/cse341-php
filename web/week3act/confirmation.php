@@ -24,13 +24,13 @@ $action = filter_input(INPUT_POST, 'action');
         $customerSummary = "<div>
                                 <div>";
 
-        $customerSummary .= 
-         "<p>". $customers ."</p>";
-         }
-       $customerSummary .= "</div></div>";
+       //  $customerSummary .= 
+       //   "<p>". $customers ."</p>";
+       //   }
+       // $customerSummary .= "</div></div>";
 
-       $productSummary = "<div><div><ul>";
-           $products = $_SESSION['product'];
+       // $productSummary = "<div><div><ul>";
+       //     $products = $_SESSION['product'];
 
         // foreach($products as $key=>$product){
         //    $productSummary .= 
