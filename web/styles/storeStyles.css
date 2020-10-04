@@ -121,3 +121,8 @@ footer {
 .soap button {
 	height: 100px;
 }
+
+#progress-buttons {
+	display: flex;
+	margin: 10px;
+}
