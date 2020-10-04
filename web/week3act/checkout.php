@@ -34,7 +34,7 @@
 				
 
 					<div id="progress-buttons">
-						<input type='submit' value='cart'><input type='hidden' name='action' value='cart'>
+						<input type='submit' value='Cart'><input type='hidden' name='action' value='cart'>
 						<input type='submit' value='Checkout'><input type='hidden' name='action' value='checkout'>
 					</div>
 				</form>
