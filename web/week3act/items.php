@@ -1,13 +1,31 @@
 <?php 
 	session_start();
 
-	$cartArray = array("Hello");
+	if (!isset( $_SESSION['cart'] )){
+		  $_SESSION['cart'] = [];
+	}
 
-	echo $cartArray[0];
+$action = filter_input(INPUT_POST, 'action');
+ if ($action == NULL){
+  $action = filter_input(INPUT_GET, 'action');
+ }
+switch ($action){
 
-	// if(!isset($SESSION['products'])) {
-	// 	$_SESSION['products'] = $productArray;
-	// }
+  case 'lavender':
+    $_SESSION['cart'][0] = 'Lavender Soap';
+  break;
+  
+  case 'mint':
+    $_SESSION['cart'][1] = 'Mint Soap';
+  break;
+  
+  case 'oatmeal':
+    $_SESSION['cart'][2] = 'Oatmeal Soap';
+  
+  default:
+  break;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +46,7 @@
 						<h3>Lavender Soap</h3>
 						<p>This lavender soap has a fresh flowery smell that will soothe you</p>
 					</div>
-					<button type="button" onclick="<?php array_push($cartArray, "Lavender Soap"); echo $cartArray[0]; $_SESSION['cart'] = $cartArray; ?>">Add to Cart</button>
+					<a href="items.php?action=lavender">Add to Cart</a>
 
 				</div>
 				<div class="soap">
@@ -37,7 +55,7 @@
 						<h3>Mint Soap</h3>
 						<p>This mint soap has a cool tingly shock that will revive you</p>
 					</div>
-					<button type="button" onclick="<?php array_push($cartArray, "Mint Soap"); $_SESSION['cart'] = $cartArray; ?>">Add to Cart</button>
+					<a href="items.php?action=mint">Add to Cart</a>
 				</div>
 				<div class="soap">
 					<div class="description">
@@ -45,7 +63,7 @@
 						<h3>Oatmeal Soap</h3>
 						<p>This oatmeal soap has a warm yummy scent that will comfort you</p>
 					</div>
-					<button type="button" onclick="<?php array_push($cartArray, "Mint Soap"); $_SESSION['cart'] = $cartArray; ?>">Add to Cart</button>
+					<a href="items.php?action=oatmeal">Add to Cart</a>
 				</div>
 			</div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
