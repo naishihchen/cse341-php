@@ -11,9 +11,10 @@
 			<h2>Shopping Cart</h2>
 			<div id="soaps" class="hello">
 				<?php
+				var_dump($_SESSION['cart']);
 					if(isset($_SESSION['cart'])){
-					    foreach($_SESSION['cart'] as $productId){
-					        echo $productId, '<br>';
+					    foreach($_SESSION['cart'] as $product){
+					        echo $product, '<br>';
     					}
 					}
 				?>
