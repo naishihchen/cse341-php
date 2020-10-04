@@ -3,6 +3,8 @@
 
 	$cartArray = array("Hello");
 
+	echo $cartArray[0];
+
 	// if(!isset($SESSION['products'])) {
 	// 	$_SESSION['products'] = $productArray;
 	// }
