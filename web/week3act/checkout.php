@@ -15,7 +15,7 @@
 		<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeHeader.php'; ?>
 		<main>
 			<h2>Checkout</h2>
-			<div id="soaps" class="hello">
+			<div id="form-div" class="hello">
 				<form id="checkout-form" action='confirmation.php' method='post'>
 					<label for="street">Street: </label>
 					<input id="street" type="text" name="street">
