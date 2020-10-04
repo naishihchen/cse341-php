@@ -22,22 +22,16 @@
 			<div id="soaps" class="hello">
 				<div class="soap">
 					<div class="description">
-						<img src="images/lavender-soap.jpg">
+						<img src="/images/lavender-soap.jpg">
 						<h3>Lavender Soap</h3>
 						<p>This lavender soap has a fresh flowery smell that will soothe you</p>
 					</div>
-					<button type="button" onclick="echo "<form action='study.php' method='GET'>
-   <input type='hidden' name='number' value='".$_SESSION['order']++."' />
-   <input class='big_b' type='submit'  value='next' /> 
- </form>";
+					<button type="button" onclick="">Add to Cart</button>
 
- echo $_SESSION['order'];
-
-?>">Add to Cart</button>
 				</div>
 				<div class="soap">
 					<div class="description">
-						<img src="images/mint-soap.jpg">
+						<img src="/images/mint-soap.jpg">
 						<h3>Mint Soap</h3>
 						<p>This mint soap has a cool tingly shock that will revive you</p>
 					</div>
@@ -45,7 +39,7 @@
 				</div>
 				<div class="soap">
 					<div class="description">
-						<img src="images/oatmeal-soap.jpg">
+						<img src="/images/oatmeal-soap.jpg">
 						<h3>Oatmeal Soap</h3>
 						<p>This oatmeal soap has a warm yummy scent that will comfort you</p>
 					</div>
