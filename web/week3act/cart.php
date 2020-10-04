@@ -10,10 +10,6 @@
 		<main>
 			<h2>Shopping Cart</h2>
 			<div id="soaps" class="hello">
-				<?php foreach($results[] as $result) {
-    					echo $result, '<br>';
-					} 
-				?>
 			</div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
 		</main>
