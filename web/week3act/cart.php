@@ -10,6 +10,13 @@
 		<main>
 			<h2>Shopping Cart</h2>
 			<div id="soaps" class="hello">
+				<?php
+					if(isset($_SESSION['cart'])){
+					    foreach($_SESSION['cart'] as $productId){
+					        echo $productId, '<br>';
+    					}
+					}
+				?>
 			</div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
 		</main>
