@@ -14,7 +14,7 @@
 		<main>
 			<h2>Shopping Cart</h2>
 			<div id="soaps" class="hello">
-				<div id="soap">
+				<div class="soap">
 					<?php
 						if(isset($_SESSION['cart'])){
 						    foreach($_SESSION['cart'] as $product){
