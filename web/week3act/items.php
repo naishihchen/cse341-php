@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 
-	$cartArray = [];
+	$cartArray = array("Hello");
 
 	// if(!isset($SESSION['products'])) {
 	// 	$_SESSION['products'] = $productArray;
