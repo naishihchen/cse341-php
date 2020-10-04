@@ -135,7 +135,9 @@ footer {
 }
 
 #checkout-form {
-	display: flex;
-	flex-direction: column;
-	width: 200px;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    align-items: baseline;
+    margin: 20px;
 }
