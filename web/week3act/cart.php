@@ -6,13 +6,7 @@
   $action = filter_input(INPUT_GET, 'action');
  }
 
- if (isset( $_SESSION['cart'] )){
-
- 	$cartContents = "";
-
-	foreach($_SESSION['cart'] as $product){
-		$cartContents .= "<div class='cart-item'>".$product."<a href='cart.php?action=".$product."'>Remove</a></div> <br>";
-	} 	
+ if (isset( $_SESSION['cart'] )){	
 
  	switch ($action){
 
@@ -30,6 +24,13 @@
 	  default:
 	  break;
 	}
+
+
+	$cartContents = "";
+
+	foreach($_SESSION['cart'] as $product){
+		$cartContents .= "<div class='cart-item'>".$product."<a href='cart.php?action=".$product."'>Remove</a></div> <br>";
+	} 
  }
 
  var_dump($_SESSION['cart']);
