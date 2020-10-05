@@ -1,5 +1,31 @@
 <?php
 	session_start();
+
+	$action = filter_input(INPUT_POST, 'action');
+ if ($action == NULL){
+  $action = filter_input(INPUT_GET, 'action');
+ }
+
+ if (isset( $_SESSION['cart'] )){
+ 	switch ($action){
+
+	  case 'Lavender Soap':
+	    $_SESSION['cart'][0] = '';
+	  break;
+	  
+	  case 'Mint Soap':
+	    $_SESSION['cart'][1] = '';
+	  break;
+	  
+	  case 'Oatmeal Soap':
+	    $_SESSION['cart'][2] = '';
+	  
+	  default:
+	  break;
+	}
+ }
+
+ var_dump($_SESSION['cart']);
 ?>
 
 <!DOCTYPE html>
