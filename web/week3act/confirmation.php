@@ -20,26 +20,14 @@ $action = filter_input(INPUT_POST, 'action');
 
         var_dump($_SESSION['customers']['street']);
 
-        $customers = $_SESSION['customers'];
-        $customerSummary = "<div>
-                                <div>";
+        $customers = "<div id='customer-summary'>";
+        $customers .= "<div class='info-item'><p>".$_SESSION['customers']['street']."</p></div> <br>";
+        $customers .= "<div class='info-item'><p>".$_SESSION['customers']['unit']."</p></div> <br>";
+        $customers .= "<div class='info-item'><p>".$_SESSION['customers']['city']."</p></div> <br>";
+        $customers .= "<div class='info-item'><p>".$_SESSION['customers']['state']."</p></div> <br>";
+        $customers .= "<div class='info-item'><p>".$_SESSION['customers']['zip']."</p></div> <br>";
+        $customers .= "</div>";
 
-       //  $customerSummary .= 
-       //   "<p>". $customers ."</p>";
-       //   }
-       // $customerSummary .= "</div></div>";
-
-       // $productSummary = "<div><div><ul>";
-       //     $products = $_SESSION['product'];
-
-        // foreach($products as $key=>$product){
-        //    $productSummary .= 
-        //     "<li>"
-        //     . $product ."</li>";
-        //     }
-        //     $productSummary .= "</ul><ul>";
-
-        //     $productSummary .= "</ul></div></div>";
       break;
       default:
     break;
@@ -58,8 +46,8 @@ $action = filter_input(INPUT_POST, 'action');
             <h2>Confirmation</h2>
             <div id="soaps" class="hello">
                 <?php
-                        if(isset($customerSummary)){
-                            echo $customerSummary;
+                        if(isset($customers)){
+                            echo $customers;
                         }
                     ?>
             </div>
