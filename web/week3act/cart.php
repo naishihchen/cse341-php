@@ -29,7 +29,9 @@
 	$cartContents = "";
 
 	foreach($_SESSION['cart'] as $product){
-		$cartContents .= "<div class='cart-item'>".$product."<a href='cart.php?action=".$product."'>Remove</a></div> <br>";
+		if ($product != "") {
+			$cartContents .= "<div class='cart-item'>".$product."<a href='cart.php?action=".$product."'>Remove</a></div> <br>";
+		}
 	} 
  }
 
