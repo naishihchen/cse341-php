@@ -151,3 +151,8 @@ footer {
 #progress-buttons input {
 	margin: 20px;
 }
+
+#items-link {
+	text-decoration: none;
+	color: #fff;
+}
