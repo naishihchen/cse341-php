@@ -41,11 +41,6 @@ $action = filter_input(INPUT_POST, 'action');
 
         //     $productSummary .= "</ul></div></div>";
       break;
-      case 'cart':
-            echo "Hello";
-          include 'cart.php';
-
-          break;
       default:
     break;
  }
