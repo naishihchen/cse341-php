@@ -50,7 +50,7 @@ $action = filter_input(INPUT_POST, 'action');
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeHeader.php'; ?>
         <main>
-            <h2>Confirmation</h2>
+            <h2 id="confirmation">Confirmation</h2>
             <div id="soaps" class="hello">
                 <?php
                         if(isset($customers)){
