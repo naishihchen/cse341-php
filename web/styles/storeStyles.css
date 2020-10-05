@@ -177,3 +177,8 @@ footer {
 #cart-return {
 	margin: 20px;
 }
+
+#customer-summary {
+	display: flex;
+	justify-content: center;
+}

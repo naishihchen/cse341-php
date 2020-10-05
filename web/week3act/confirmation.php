@@ -26,8 +26,6 @@ $action = filter_input(INPUT_POST, 'action');
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['zip']."</p></div> <br>";
         $customers .= "</div>";
 
-        var_dump($customers);
-
       break;
       default:
     break;
