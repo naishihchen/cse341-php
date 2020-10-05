@@ -18,7 +18,7 @@
 					<?php
 						if(isset($_SESSION['cart'])){
 						    foreach($_SESSION['cart'] as $product){
-						        echo $product, '<br>';
+						        echo "<div class='cart-item'>".$product."<a href='cart.php?action=".$product."'>Remove</a></div> <br>";
 	    					}
 						}
 					?>
