@@ -7,6 +7,13 @@
  }
 
  if (isset( $_SESSION['cart'] )){
+
+ 	$cartContents = "";
+
+	foreach($_SESSION['cart'] as $product){
+		$cartContents .= "<div class='cart-item'>".$product."<a href='cart.php?action=".$product."'>Remove</a></div> <br>";
+	} 	
+
  	switch ($action){
 
 	  case 'Lavender Soap':
@@ -42,10 +49,8 @@
 			<div id="soaps" class="hello">
 				<div class="soap">
 					<?php
-						if(isset($_SESSION['cart'])){
-						    foreach($_SESSION['cart'] as $product){
-						        echo "<div class='cart-item'>".$product."<a href='cart.php?action=".$product."'>Remove</a></div> <br>";
-	    					}
+						if(isset($cartContents)){
+						    echo $cartContents;
 						}
 					?>
 				</div>
