@@ -25,10 +25,12 @@ $action = filter_input(INPUT_POST, 'action');
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['city']."</p></div> <br>";
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['state']."</p></div> <br>";
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['zip']."</p></div> <br>";
-        $customers .= "<h2>Customer Order</h2>"
-        foreach($_SESSION['cart'] as $product){
-            if ($product != "") {
-                $customers .= "<div class='cart-item'><p>".$product."</p></div> <br>";
+        $customers .= "<h2>Customer Order</h2>";
+        if (isset($_SESSION['cart'])) {    
+            foreach($_SESSION['cart'] as $product){
+                if ($product != "") {
+                    $customers .= "<div class='cart-item'><p>".$product."</p></div> <br>";
+                }
             }
         } 
         $customers .= "</div>";
