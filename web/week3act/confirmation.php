@@ -42,6 +42,7 @@ $action = filter_input(INPUT_POST, 'action');
         //     $productSummary .= "</ul></div></div>";
       break;
       case 'cart':
+            echo "Hello";
           header("Location: /week3act/cart.php");
 
           break;
