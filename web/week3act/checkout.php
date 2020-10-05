@@ -37,7 +37,7 @@
 						<input type='submit' value='Checkout'><input type='hidden' name='action' value='checkout'>
 					</div>
 				</form>
-				<a href="cart.php">Back to Cart</a>
+				<a id="cart-return" href="cart.php">Back to Cart</a>
 			</div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
 		</main>
