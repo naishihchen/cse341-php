@@ -43,7 +43,7 @@ $action = filter_input(INPUT_POST, 'action');
       break;
       case 'cart':
             echo "Hello";
-          header("Location: /week3act/cart.php");
+          include 'cart.php';
 
           break;
       default:
