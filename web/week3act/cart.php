@@ -33,7 +33,8 @@
 			$cartContents .= "<div class='cart-item'>".$product."<a href='cart.php?action=".$product."'>Remove</a></div> <br>";
 		}
 	} 
-	$cartContents .= "</div>"
+
+	$cartContents .= "</div>";
  }
 
  var_dump($_SESSION['cart']);
