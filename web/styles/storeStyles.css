@@ -156,3 +156,14 @@ footer {
 	text-decoration: none;
 	color: #000;
 }
+
+#shopping-cart {
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-item {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px;
+}

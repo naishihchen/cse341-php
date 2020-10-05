@@ -26,13 +26,14 @@
 	}
 
 
-	$cartContents = "";
+	$cartContents = "<div id='shopping-cart'>";
 
 	foreach($_SESSION['cart'] as $product){
 		if ($product != "") {
 			$cartContents .= "<div class='cart-item'>".$product."<a href='cart.php?action=".$product."'>Remove</a></div> <br>";
 		}
 	} 
+	$cartContents .= "</div>"
  }
 
  var_dump($_SESSION['cart']);
