@@ -18,8 +18,6 @@ $action = filter_input(INPUT_POST, 'action');
         $_SESSION['customers']['state'] = 'State: '.$state;
         $_SESSION['customers']['zip'] = 'Zip Code: '.$zip;
 
-        var_dump($_SESSION['customers']['street']);
-
         $customers = "<div id='customer-summary'>";
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['street']."</p></div> <br>";
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['unit']."</p></div> <br>";
@@ -27,6 +25,8 @@ $action = filter_input(INPUT_POST, 'action');
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['state']."</p></div> <br>";
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['zip']."</p></div> <br>";
         $customers .= "</div>";
+
+        var_dump($customers);
 
       break;
       default:
