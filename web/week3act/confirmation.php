@@ -19,7 +19,7 @@ $action = filter_input(INPUT_POST, 'action');
         $_SESSION['customers']['zip'] = 'Zip Code: '.$zip;
 
         $customers = "<div id='customer-summary'>";
-        $customers .= "<h2>Customer Info</h2>"
+        $customers .= "<h2>Customer Info</h2>";
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['street']."</p></div> <br>";
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['unit']."</p></div> <br>";
         $customers .= "<div class='info-item'><p>".$_SESSION['customers']['city']."</p></div> <br>";
