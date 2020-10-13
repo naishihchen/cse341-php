@@ -31,6 +31,7 @@ foreach ($db->query('SELECT * FROM scriptures') as $row)
   	$queryResults .= " " . $row['chapter'];
 	$queryResults .= ":" . $row['verse'] . "</strong>";
 	$queryResults .= " - \"" . $row['content'] . "\"";
+	$queryResults .= "</p>";
 }
 
 $queryResults .= "</div>"
