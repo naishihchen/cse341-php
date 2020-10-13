@@ -30,7 +30,7 @@ foreach ($db->query('SELECT * FROM scriptures') as $row)
   	$queryResults .= "<strong>" . $row['book'];
   	$queryResults .= " " . $row['chapter'];
 	$queryResults .= ":" . $row['verse'] . "</strong>";
-	$queryResults .= " - \"" . $row['content'] . "\"";
+	$queryResults .= " - " . $row['content'];
 	$queryResults .= "</p>";
 }
 
