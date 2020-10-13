@@ -22,12 +22,18 @@ catch (PDOException $ex)
   die();
 }
 
-$statement = $db->query('SELECT * FROM scriptures');
-$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+$queryResults = "<div id='query-results'>"
 
-$queryResults = "<p id='scripture-results'>";
-$queryResults .= $results;
-$queryResults .= "</p>";
+foreach ($db->query('SELECT * FROM scriptures') as $row)
+{
+	$queryResults .= "<p id='scripture'>"
+  	$queryResults .= "<strong>" . $row['book'];
+  	$queryResults .= " " . $row['chapter'];
+	$queryResults .= ":" . $row['verse'] . "</strong>";
+	$queryResults .= " - \"" . $row['content'] . "\"";
+}
+
+$queryResults .= "</div>"
 ?>
 
 <!DOCTYPE html>
