@@ -24,15 +24,15 @@ catch (PDOException $ex)
 
 $queryResults = "<div id='query-results'>"
 
-foreach ($db->query('SELECT * FROM scriptures') as $row)
-{
-	$queryResults .= "<p id='scripture'>"
-  	$queryResults .= "<strong>" . $row['book'];
-  	$queryResults .= " " . $row['chapter'];
-	$queryResults .= ":" . $row['verse'] . "</strong>";
-	$queryResults .= " - " . $row['content'];
-	$queryResults .= "</p>";
-}
+// foreach ($db->query('SELECT * FROM scriptures') as $row)
+// {
+// 	$queryResults .= "<p id='scripture'>"
+//   	$queryResults .= "<strong>" . $row['book'];
+//   	$queryResults .= " " . $row['chapter'];
+// 	$queryResults .= ":" . $row['verse'] . "</strong>";
+// 	$queryResults .= " - " . $row['content'];
+// 	$queryResults .= "</p>";
+// }
 
 $queryResults .= "</div>"
 ?>
