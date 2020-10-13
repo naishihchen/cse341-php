@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 	try
 {
@@ -29,7 +29,7 @@ $queryResults = "<p id='scripture-results'>";
 $queryResults .= $results;
 $queryResults -. "</p>";
 
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
