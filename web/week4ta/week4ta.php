@@ -22,19 +22,19 @@ catch (PDOException $ex)
   die();
 }
 
-$queryResults = "<div id='query-results'>"
+$queryResults = "<div id='query-results'>";
 
-// foreach ($db->query('SELECT * FROM scriptures') as $row)
-// {
-// 	$queryResults .= "<p id='scripture'>"
-//   	$queryResults .= "<strong>" . $row['book'];
-//   	$queryResults .= " " . $row['chapter'];
-// 	$queryResults .= ":" . $row['verse'] . "</strong>";
-// 	$queryResults .= " - " . $row['content'];
-// 	$queryResults .= "</p>";
-// }
+foreach ($db->query('SELECT * FROM scriptures') as $row)
+{
+	$queryResults .= "<p id='scripture'>";
+  	$queryResults .= "<strong>" . $row['book'];
+  	$queryResults .= " " . $row['chapter'];
+	$queryResults .= ":" . $row['verse'] . "</strong>";
+	$queryResults .= " - " . $row['content'];
+	$queryResults .= "</p>";
+}
 
-$queryResults .= "</div>"
+$queryResults .= "</div>";
 ?>
 
 <!DOCTYPE html>
