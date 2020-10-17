@@ -1,7 +1,7 @@
 <?php 
-	// session_start();
+	session_start();
 
-	// include 'database_connection.php';
+	include 'database_connection.php';
 
 	// $queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid;"; 
 
