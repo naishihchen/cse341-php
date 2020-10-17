@@ -10,12 +10,9 @@
 	}
 
 	$queryString = 'SELECT userid FROM users WHERE fullname = "Jane Doe"'; 
-	 $select = $db->prepare($queryString);
-	 $select->execute();
-
-
-
-	// $userId = $select->fetch(PDO::FETCH_ASSOC);
+	$select = $db->prepare($queryString);
+	$select->execute();
+	$userId = $select->fetchAll(PDO::FETCH_ASSOC);
 
 	//  var_dump($userId);
 
