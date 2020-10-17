@@ -9,9 +9,9 @@
 		  $_SESSION['cart'] = [];
 	}
 
-	$queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid"; 
-	// $select = $db->prepare($queryString);
-	// $select->execute();
+	$queryString = 'SELECT userid FROM users WHERE fullname = "Jane Doe"'; 
+	 $select = $db->prepare($queryString);
+	 $select->execute();
 
 
 
