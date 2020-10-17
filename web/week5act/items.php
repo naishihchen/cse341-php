@@ -9,7 +9,7 @@
 		  $_SESSION['cart'] = [];
 	}
 
-	// $userId = $db->query('SELECT userid FROM users WHERE fullname = "Jane Doe"');
+	$userId = $db->query('SELECT userid FROM users WHERE fullname = "Jane Doe"');
 
 	// var_dump($userId);
 
