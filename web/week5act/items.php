@@ -14,9 +14,9 @@
 	foreach ($db->query('SELECT * FROM products') as $row)
 {
 	$queryResults .= "<div class='description'>";
-  	$queryResults .= "<img src='" . $row['productImage'] . "'><br>";
-  	$queryResults .= "<h3>" . $row['productName'] . "</h3><br>";
-	$queryResults .= "<p>" . $row['productDescription'] . "</p>";
+  	$queryResults .= "<img src='" . $row['productimage'] . "'><br>";
+  	$queryResults .= "<h3>" . $row['productname'] . "</h3><br>";
+	$queryResults .= "<p>" . $row['productdescription'] . "</p>";
 	$queryResults .= "</div>";
 }
 
