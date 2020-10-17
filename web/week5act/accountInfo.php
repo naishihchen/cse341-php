@@ -3,9 +3,14 @@
 
 	include 'database_connection.php';
 
-	$queryString = "SELECT username, fullname, email FROM users WHERE userid = " . $_SESSION['userId'] . ";"; 
+	$queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid"; 
 
-	$row = $db->query($queryString);
+	$select = $db->prepare($queryString);
+
+	$select->bindParam(':userid', $_SESSION['userId'], PDO::PARAM_INT);
+	$select->execute();
+
+	$row = $select->fetch(PDO::FETCH_ASSOC);
 
 	var_dump($row);
 ?>
