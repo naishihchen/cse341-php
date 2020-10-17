@@ -14,7 +14,7 @@
 	$select->execute();
 	$userId = $select->fetchAll(PDO::FETCH_ASSOC);
 
-	var_dump($userId['userid']);
+	var_dump($userId);
 
 	$_SESSION['userId'] = $userId['userid'];
 
