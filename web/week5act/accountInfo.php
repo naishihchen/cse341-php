@@ -1,9 +1,9 @@
 <?php 
 	session_start();
 
-	include 'database_connection.php';
+	include 'database_connect.php';
 
-	$queryString = "SELECT username, fullname, email FROM users WHERE userid = 1;"; 
+	$queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid;"; 
 	$sql = $db->prepare($queryString);
 	$sql->execute();
 
