@@ -13,6 +13,7 @@
 			<a href="week3ta/week3ta.php">Week 3 Team Activity</a>
 			<a href="week3act/items.php">Week 3 Assignment</a>
 			<a href="week4ta/week4ta.php">Week 4 Team Activity</a>
+			<a href="week5act/items.php">Week 5 Assignment</a>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 		</main>
 	</body>
