@@ -16,7 +16,7 @@
 
 	var_dump($userId);
 	var_dump($userId['userid']);
-	var_dump($userId[0]);
+	var_dump($userId[0]['userid']);
 
 	$_SESSION['userId'] = $userId['userid'];
 
