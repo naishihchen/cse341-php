@@ -8,9 +8,9 @@
 	$sql->bindParam(':userid', $_SESSION['userId'], PDO::PARAM_INT);
 	$sql->execute();
 
-	// $row = $select->fetchAll(PDO::FETCH_ASSOC);
+	$row = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-	// var_dump($row);
+	var_dump($row);
 ?>
 <!DOCTYPE html>
 <html lang="en">
