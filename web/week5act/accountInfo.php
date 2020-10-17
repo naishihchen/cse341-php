@@ -32,6 +32,8 @@
 			<?php if (isset($queryResults)) {
 				echo $queryResults;
 			} ?>
+
+			<p>Visit our <a href="purchaseSearch.php">Receipt Search</a> page to search for past purchases<p>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
 		</main>
 	</body>

@@ -1,0 +1,28 @@
+<?php
+session_start();
+include 'database_connect.php';
+
+$product = htmlspecialchars($_GET["product"]);
+​
+foreach ($db->query("SELECT purchaseTime, quantity, purchasePrice FROM purchases pu JOIN products pr ON pu.productId = pr.productId WHERE productName = '" . $product . "' AND userid = '" . $_SESSION['userId'] . "';") as $row)
+{
+    echo "<p><strong>";
+    echo $row['purchaseTime'] . " " . $row['quantity'] .":" . $row['purchasePrice'];
+    echo '"</p>';
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Receipt Search</title>
+</head>
+<body>
+<h1>Receipt Search
+</h1>
+<p>Please enter the name of the product you wish to search for, with each first letter capitalized.</p>
+<form action="purchaseSearch.php">
+    <input type="text" name="product">
+    <input type="submit">
+</form>
