@@ -2,7 +2,7 @@
 session_start();
 include 'database_connect.php';
 
-//$product = htmlspecialchars($_GET["product"]);
+$product = htmlspecialchars($_GET["product"]);
 ​
 // if (isset($product)) {
 //     foreach ($db->query("SELECT purchaseTime, quantity, purchasePrice FROM purchases pu JOIN products pr ON pu.productId = pr.productId WHERE productName = '" . $product . "' AND userid = '" . $_SESSION['userId'] . "';") as $row)
