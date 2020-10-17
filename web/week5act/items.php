@@ -15,9 +15,9 @@
 
 
 
-	$userId = $select->fetch(PDO::FETCH_ASSOC);
+	// $userId = $select->fetch(PDO::FETCH_ASSOC);
 
-	 var_dump($userId);
+	//  var_dump($userId);
 
 	// $_SESSION['userId'] = $userId;
 
