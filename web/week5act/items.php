@@ -16,7 +16,7 @@
 
 	var_dump($userId);
 
-	$_SESSION['userId'] = $userId;
+	$_SESSION['userId'] = $userId['userid'];
 
 	$queryResults = "<div id='soaps' class='hello'>";
 
