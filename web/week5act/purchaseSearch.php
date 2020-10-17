@@ -28,8 +28,8 @@ $product = htmlspecialchars($_GET["product"]);
                     foreach ($db->query("SELECT purchaseTime, quantity, purchasePrice FROM purchases pu JOIN products pr ON pu.productId = pr.productId WHERE productName = '" . $product . "' AND userid = '" . $_SESSION['userId'] . "';") as $row)
                     {
                         echo "<p>";
-                        echo $row['purchaseTime'] . " " . $row['quantity'] .":" . $row['purchasePrice'];
-                        echo '"</p>';
+                        echo $row['purchasetime'] . " " . $row['quantity'] .":" . $row['purchaseprice'];
+                        echo '</p>';
                     }
                 }
             ?>
