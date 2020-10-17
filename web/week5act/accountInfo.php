@@ -10,7 +10,13 @@
 
 	$row = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-	var_dump($row);
+	$queryResults = "<div id='account-info'>";
+
+  	$queryResults .= "<p>Full Name: " . $row[0]['fullname'] . "</p><br>";
+  	$queryResults .= "<p>User Name: " . $row[0]['username'] . "</p><br>";
+	$queryResults .= "<p>Email: " . $row[0]['email'] . "</p>";
+
+	$queryResults .= "</div>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +29,9 @@
 		<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeHeader.php'; ?>
 		<main>
 			<h2>Account Info</h2>
+			<?php if (isset($queryResults)) {
+				echo $queryResults;
+			} ?>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
 		</main>
 	</body>
