@@ -6,7 +6,7 @@
 	$queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid;"; 
 	$sql = $db->prepare($queryString);
 	$sql->bindParam(':userid', $_SESSION['userId'], PDO::PARAM_INT);
-	// $sql->execute();
+	$sql->execute();
 
 	// $row = $select->fetchAll(PDO::FETCH_ASSOC);
 
