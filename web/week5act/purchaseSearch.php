@@ -3,15 +3,7 @@ session_start();
 include 'database_connect.php';
 
 $product = htmlspecialchars($_GET["product"]);
-​
-if (isset($product)) {
-    foreach ($db->query("SELECT purchaseTime, quantity, purchasePrice FROM purchases pu JOIN products pr ON pu.productId = pr.productId WHERE productName = '" . $product . "' AND userid = '" . $_SESSION['userId'] . "';") as $row)
-    {
-        echo "<p>";
-        echo $row['purchaseTime'] . " " . $row['quantity'] .":" . $row['purchasePrice'];
-        echo '"</p>';
-    }
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +23,16 @@ if (isset($product)) {
                 <input type="text" name="product">
                 <input type="submit">
             </form>
+            <?php
+                if (isset($product)) {
+                    foreach ($db->query("SELECT purchaseTime, quantity, purchasePrice FROM purchases pu JOIN products pr ON pu.productId = pr.productId WHERE productName = '" . $product . "' AND userid = '" . $_SESSION['userId'] . "';") as $row)
+                    {
+                        echo "<p>";
+                        echo $row['purchaseTime'] . " " . $row['quantity'] .":" . $row['purchasePrice'];
+                        echo '"</p>';
+                    }
+                }
+            ?>
             <br>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
         </main>
