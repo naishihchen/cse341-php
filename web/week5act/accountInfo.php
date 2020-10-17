@@ -5,7 +5,7 @@
 
 	$queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid;"; 
 
-	// $select = $db->prepare($queryString);
+	$select = $db->prepare($queryString);
 
 	// $select->bindParam(':userid', $_SESSION['userId'], PDO::PARAM_INT);
 	// $select->execute();
