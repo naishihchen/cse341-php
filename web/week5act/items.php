@@ -9,6 +9,12 @@
 		  $_SESSION['cart'] = [];
 	}
 
+	$userId = $db->query('SELECT userid FROM users WHERE fullname = "Jane Doe"');
+
+	var_dump($userId);
+
+	$_SESSION['userId'] = $userId;
+
 	$queryResults = "<div id='soaps' class='hello'>";
 
 	foreach ($db->query('SELECT * FROM products') as $row)
