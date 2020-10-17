@@ -9,7 +9,7 @@
 		  $_SESSION['cart'] = [];
 	}
 
-	$queryString = 'SELECT userid FROM users WHERE fullname = "Jane Doe";'; 
+	$queryString = "SELECT userid FROM users WHERE fullname = 'Jane Doe';"; 
 	$select = $db->prepare($queryString);
 	$select->execute();
 	$userId = $select->fetchAll(PDO::FETCH_ASSOC);
