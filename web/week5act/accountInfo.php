@@ -3,8 +3,9 @@
 
 	include 'database_connect.php';
 
-	$queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid;"; 
+	$queryString = "SELECT username, fullname, email FROM users WHERE userid = 1;"; 
 	$sql = $db->prepare($queryString);
+	$sql->bindParam(':userid', 1, PDO::PARAM_INT);
 	$sql->execute();
 
 	$row = $select->fetchAll(PDO::FETCH_ASSOC);
