@@ -3,7 +3,7 @@
 
 	include 'database_connection.php';
 
-	// $queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid;"; 
+	$queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid;"; 
 
 	// $select = $db->prepare($queryString);
 
