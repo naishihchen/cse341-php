@@ -56,7 +56,7 @@ switch ($action){
 		<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeHeader.php'; ?>
 		<main>
 			<h2>Items For Sale</h2>
-			<?php if isset($queryResults) {
+			<?php if (isset($queryResults)) {
 				echo $queryResults;
 			} ?>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
