@@ -31,6 +31,7 @@ $product = htmlspecialchars($_GET["product"]);
                 <input type="text" name="product">
                 <input type="submit">
             </form>
+            <br>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
         </main>
     </body>
