@@ -1,11 +1,11 @@
 <?php 
-	session_start();
+	// session_start();
 
-	include 'database_connection.php';
+	// include 'database_connection.php';
 
-	$queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid;"; 
+	// $queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid;"; 
 
-	$select = $db->prepare($queryString);
+	// $select = $db->prepare($queryString);
 
 	// $select->bindParam(':userid', $_SESSION['userId'], PDO::PARAM_INT);
 	// $select->execute();
