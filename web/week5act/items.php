@@ -10,8 +10,8 @@
 	}
 
 	$queryString = "SELECT username, fullname, email FROM users WHERE userid = :userid"; 
-	$select = $db->prepare($queryString);
-	$select->execute();
+	// $select = $db->prepare($queryString);
+	// $select->execute();
 
 
 
