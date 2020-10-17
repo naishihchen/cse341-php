@@ -1,9 +1,26 @@
 <?php 
 	session_start();
 
+	$_SESSION["accountNum"] = 0;
+
+	include 'database_connect.php';
+
 	if (!isset( $_SESSION['cart'] )){
 		  $_SESSION['cart'] = [];
 	}
+
+	$queryResults = "<div id='soaps' class='hello'>";
+
+	foreach ($db->query('SELECT * FROM products') as $row)
+{
+	$queryResults .= "<div class='description'>";
+  	$queryResults .= "<img src='" . $row['productImage'] . "'><br>";
+  	$queryResults .= "<h3>" . $row['productName'] . "</h3><br>";
+	$queryResults .= "<p>" . $row['productDescription'] . "</p>";
+	$queryResults .= "</div>";
+}
+
+	$queryResults .= "</div>";
 
 $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
@@ -39,33 +56,7 @@ switch ($action){
 		<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeHeader.php'; ?>
 		<main>
 			<h2>Items For Sale</h2>
-			<div id="soaps" class="hello">
-				<div class="soap">
-					<div class="description">
-						<img src="/images/lavender-soap.jpg">
-						<h3>Lavender Soap</h3>
-						<p>This lavender soap has a fresh flowery smell that will soothe you</p>
-					</div>
-					<a href="items.php?action=lavender">Add to Cart</a>
-
-				</div>
-				<div class="soap">
-					<div class="description">
-						<img src="/images/mint-soap.jpg">
-						<h3>Mint Soap</h3>
-						<p>This mint soap has a cool tingly shock that will revive you</p>
-					</div>
-					<a href="items.php?action=mint">Add to Cart</a>
-				</div>
-				<div class="soap">
-					<div class="description">
-						<img src="/images/oatmeal-soap.jpg">
-						<h3>Oatmeal Soap</h3>
-						<p>This oatmeal soap has a warm yummy scent that will comfort you</p>
-					</div>
-					<a href="items.php?action=oatmeal">Add to Cart</a>
-				</div>
-			</div>
+			<?php if isset($queryResults) ?>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
 		</main>
 	</body>
