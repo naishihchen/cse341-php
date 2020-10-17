@@ -7,8 +7,8 @@
 
 	$select = $db->prepare($queryString);
 
-	$select->bindParam(':userid', $_SESSION['userId'], PDO::PARAM_INT);
-	$select->execute();
+	// $select->bindParam(':userid', $_SESSION['userId'], PDO::PARAM_INT);
+	// $select->execute();
 
 	// $row = $select->fetchAll(PDO::FETCH_ASSOC);
 
