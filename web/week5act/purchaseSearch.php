@@ -23,17 +23,20 @@ $product = htmlspecialchars($_GET["product"]);
                 <input type="text" name="product">
                 <input type="submit">
             </form>
-            <?php
-                if (isset($product)) {
-                    foreach ($db->query("SELECT purchaseTime, quantity, purchasePrice FROM purchases pu JOIN products pr ON pu.productId = pr.productId WHERE productName = '" . $product . "' AND userid = '" . $_SESSION['userId'] . "';") as $row)
-                    {
-                        echo "<p>";
-                        echo $row['purchasetime'] . " " . $row['quantity'] .":" . $row['purchaseprice'];
-                        echo '</p>';
+            <div id="purchase-log">
+                <?php
+                    if (isset($product)) {
+                        foreach ($db->query("SELECT purchaseTime, quantity, purchasePrice FROM purchases pu JOIN products pr ON pu.productId = pr.productId WHERE productName = '" . $product . "' AND userid = '" . $_SESSION['userId'] . "';") as $row)
+                        {
+                            echo "<div id='purchase-record'>"
+                            echo "<p> Time of Purchase: " . $row['purchasetime'] . "</p><br>";
+                            echo "<p>Quantity:  " . $row['quantity'] . "</p><br>";
+                            echo "<p>Price: " . $row['purchaseprice'] . "</p>";
+                            echo '</div>';
+                        }
                     }
-                }
-            ?>
-            <br>
+                ?>
+            </div>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
         </main>
     </body>
