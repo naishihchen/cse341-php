@@ -14,8 +14,6 @@
 	$select->execute();
 	$userId = $select->fetchAll(PDO::FETCH_ASSOC);
 
-	echo $userId[0]['userid'];
-
 	$_SESSION['userId'] = $userId[0]['userid'];
 
 	$queryResults = "<div id='soaps' class='hello'>";
