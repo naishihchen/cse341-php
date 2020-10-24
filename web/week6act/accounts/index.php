@@ -9,7 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 //Database connection file
 require_once '../database_connect.php';
-require_once '../library/functions.php';
+require_once '../functions.php';
 
 //PHP Motors Model
 require_once '../model/accounts-model.php';
