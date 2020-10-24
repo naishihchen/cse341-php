@@ -60,7 +60,7 @@ $action = filter_input(INPUT_POST, 'action');
     if($regOutcome === 1){
       setcookie('firstname', $clientFullname, strtotime('+1 year'), '/');
       $_SESSION['message'] = "<p>Thanks for registering, $clientFullname. Please use your email and password to login.</p>";
-      header('Location: /web/week6act/accounts/?action=login');
+      include '../registration.php';
       exit;
      } else {
       $_SESSION['message'] = "<p>Sorry $clientFulltname, but the registration failed. Please try again.</p>";
