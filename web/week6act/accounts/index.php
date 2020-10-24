@@ -202,11 +202,7 @@ $action = filter_input(INPUT_POST, 'action');
 
   default:
 
-    $reviews = getReviewByAccount($_SESSION['clientData']['clientId']);
-
-    $clientReviewDisplay = buildClientReviews($reviews);
-
-    include '../view/admin.php';
+    include '../items.php';
     break;
 
 }
