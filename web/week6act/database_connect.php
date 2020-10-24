@@ -1,7 +1,7 @@
   <?php
 
 
-functions soapStoreConnect() {
+function soapStoreConnect() {
     try
   {
     $dbUrl = getenv('DATABASE_URL');
