@@ -1,31 +1,12 @@
 <?php
 //Accounts Model
 
-  try
-{
-  $dbUrl = getenv('DATABASE_URL');
-
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+require_once '../database_connect.php';
 
 //Site Registration Function
 function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword) {
     //Database Connection
+    $db = soapStoreConnect();
 
     //SQL statement
     $sql = 'INSERT INTO users (fullname, username, email, password, permissions)
@@ -54,7 +35,8 @@ function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassw
 }
 
 //check for existing email address
-function emailConfirmation($clientEmail) {   
+function emailConfirmation($clientEmail) {  
+    $db = soapStoreConnect(); 
     $sql = 'SELECT email FROM users WHERE email = :email';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':email', $clientEmail, PDO::PARAM_STR);
@@ -70,6 +52,7 @@ function emailConfirmation($clientEmail) {
 
    // Get client data based on an email address
 function getClient($clientEmail){
+    $db = soapStoreConnect();
     $sql = 'SELECT userid, fullname, username, email, permissions, password FROM users WHERE email = :clientEmail';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
@@ -81,7 +64,7 @@ function getClient($clientEmail){
 
    //Update Account
 function updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientId) {
-    $db = phpmotorsConnect();
+    $db = soapStoreConnect();
     $sql = 'UPDATE users SET fullname = :clientFirstname, username = :clientLastname, '
             . 'email = :clientEmail WHERE userd = :clientId';
     $stmt = $db->prepare($sql);
@@ -97,7 +80,7 @@ function updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientI
 
 //Get updated data
 function getClientUpdate($clientId){
- $db = phpmotorsConnect();
+ $db = soapStoreConnect();
  $sql = 'SELECT userd, fullname, username, email, permissions, password 
          FROM users
          WHERE userd = :clientId';
@@ -111,7 +94,7 @@ function getClientUpdate($clientId){
 
 //Update Password
 function passUpdate($hashedPassword, $clientId) {
-    $db = phpmotorsConnect();
+    $db = soapStoreConnect();
     $sql = 'UPDATE users SET password = :hashedPassword WHERE userid = :clientId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':hashedPassword', $hashedPassword, PDO::PARAM_STR);
