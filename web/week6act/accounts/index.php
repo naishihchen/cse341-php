@@ -21,11 +21,11 @@ $action = filter_input(INPUT_POST, 'action');
 
  switch ($action){
   case 'login':
-    include '../view/login.php';
+    include '../login.php';
     break;
 
   case 'register':
-    include '../view/registration.php';
+    include '../registration.php';
     break;
 
   // case 'registration':
