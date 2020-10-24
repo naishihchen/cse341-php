@@ -9,10 +9,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 //Database connection file
 require_once '../database_connect.php';
-//require_once '../library/functions.php';
+require_once '../library/functions.php';
 
 //PHP Motors Model
-//require_once '../model/accounts-model.php';
+require_once '../model/accounts-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
@@ -28,94 +28,90 @@ $action = filter_input(INPUT_POST, 'action');
     include '../registration.php';
     break;
 
-  // case 'registration':
+  case 'registration':
 
-  //   $clientFirstname = filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING);
-  //   $clientLastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
-  //   $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
-  //   $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+    $clientFirstname = filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING);
+    $clientLastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
+    $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
+    $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
     
-  //   $clientEmail = checkEmail($clientEmail);
-  //   $checkPassword = checkPassword($clientPassword);
+    $clientEmail = checkEmail($clientEmail);
+    $checkPassword = checkPassword($clientPassword);
 
-  //   //check for existing email address
-  //   $uniqueEmail = emailConfirmation($clientEmail);
+    //check for existing email address
+    $uniqueEmail = emailConfirmation($clientEmail);
 
-  //   if($uniqueEmail) {
-  //     $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
-  //     include '../view/login.php';
-  //     exit;
-  //   }
+    if($uniqueEmail) {
+      $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+      include '../login.php';
+      exit;
+    }
 
-  //   if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
-  //     $message = '<p>Please provide information for all empty form fields.</p>';
-  //     include '../view/registration.php';
-  //     exit;
-  //   }
+    if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
+      $message = '<p>Please provide information for all empty form fields.</p>';
+      include '../registration.php';
+      exit;
+    }
 
-  //   $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+    $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
 
-  //   $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $hashedPassword);
+    $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $hashedPassword);
 
-  //   if($regOutcome === 1){
-  //     setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
-  //     $_SESSION['message'] = "<p>Thanks for registering, $clientFirstname. Please use your email and password to login.</p>";
-  //     header('Location: /phpmotors/accounts/?action=login');
-  //     exit;
-  //    } else {
-  //     $_SESSION['message'] = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
-  //     include '../view/registration.php';
-  //     exit;
-  //    }
+    if($regOutcome === 1){
+      setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
+      $_SESSION['message'] = "<p>Thanks for registering, $clientFirstname. Please use your email and password to login.</p>";
+      header('Location: /web/week6act/accounts/?action=login');
+      exit;
+     } else {
+      $_SESSION['message'] = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+      include '../registration.php';
+      exit;
+     }
 
-  //   break;
+    break;
 
-  // case 'Logging':
+  case 'Logging':
 
-  //   $loginEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
-  //   $loginPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+    $loginEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
+    $loginPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
 
-  //   $loginEmail = checkEmail($loginEmail);
-  //   $checkLoginPassword = checkPassword($loginPassword);
+    $loginEmail = checkEmail($loginEmail);
+    $checkLoginPassword = checkPassword($loginPassword);
 
-  //   if (empty($loginEmail) || empty($checkLoginPassword)) {
-  //     $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
-  //     include '../view/login.php';
-  //     exit;
-  //   }
+    if (empty($loginEmail) || empty($checkLoginPassword)) {
+      $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
+      include '../login.php';
+      exit;
+    }
 
-  //   //Get client data based on email email
-  //   $clientData = getClient($loginEmail);
+    //Get client data based on email email
+    $clientData = getClient($loginEmail);
 
-  //   if($checkLoginPassword) {
-  //     $hashCheck = password_verify($loginPassword, $clientData['clientPassword']);
-  //   }
-  //   if(!$hashCheck) {
-  //     $_SESSION['message'] = '<p>Incorrect password. Please check your password and try again.</p>';
-  //     include '../view/login.php';
-  //     exit;
-  //   }
+    if($checkLoginPassword) {
+      $hashCheck = password_verify($loginPassword, $clientData['clientPassword']);
+    }
+    if(!$hashCheck) {
+      $_SESSION['message'] = '<p>Incorrect password. Please check your password and try again.</p>';
+      include '../login.php';
+      exit;
+    }
 
-  //   if(isset($_COOKIE['firstname'])) {
-  //     setcookie('firstname', "", time() -3600, '/');
-  //   }
+    if(isset($_COOKIE['firstname'])) {
+      setcookie('firstname', "", time() -3600, '/');
+    }
 
-  //   setcookie('username', $clientData['clientFirstname'], strtotime('+1 year'), '/');
+    setcookie('username', $clientData['clientFirstname'], strtotime('+1 year'), '/');
 
-  //   $_SESSION['loggedin'] = TRUE;
+    $_SESSION['loggedin'] = TRUE;
 
-  //   //Remove password data from clientData
-  //   array_pop($clientData);
+    //Remove password data from clientData
+    array_pop($clientData);
 
-  //   $_SESSION['clientData'] = $clientData;
+    $_SESSION['clientData'] = $clientData;
 
-  //   $reviews = getReviewByAccount($clientData['clientId']);
-
-  //   $clientReviewDisplay = buildClientReviews($reviews);
-
-  //   include '../view/admin.php';
+    include '../view/accountInfo.php';
   
-  //   break;
+    break;
 
   // case 'accountUpdate':
   //   include '../view/client-update.php';
@@ -185,20 +181,20 @@ $action = filter_input(INPUT_POST, 'action');
     
   //   if ($passwordResults) {
   //       $message = "<p>Password successfully changed</p>";
-  //       include '/phpmotors/accounts/index.php';
+  //       include 'index.php';
   //       exit;
   //   } else {
   //       $message = "<p>Sorry $clientFirstname, but the update failed. Please try again.</p>";
-  //       include '/phpmotors/accounts/index.php';
+  //       include 'index.php';
   //       exit;
   //   }
   //   break;
 
-  // case 'logout':
-  //   session_destroy();
-  //   setcookie('username', "", time() -3600, '/');
-  //   header('Location: /phpmotors/');
-  //   break;
+  case 'logout':
+    session_destroy();
+    setcookie('username', "", time() -3600, '/');
+    header('Location: /web/week6act/items.php');
+    break;
 
   default:
 
