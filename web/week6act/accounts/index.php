@@ -12,7 +12,7 @@ require_once '../database_connect.php';
 require_once '../functions.php';
 
 //PHP Motors Model
-require_once '../model/accounts-model.php';
+require_once '../models/accounts-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
