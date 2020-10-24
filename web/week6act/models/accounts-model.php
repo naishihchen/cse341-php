@@ -1,8 +1,6 @@
 <?php
 //Accounts Model
 
-require_once '../database_connect.php';
-
 //Site Registration Function
 function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword) {
     //Database Connection
