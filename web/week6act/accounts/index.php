@@ -8,7 +8,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 //Database connection file
-require_once '..database_connect.php';
+require_once '../database_connect.php';
 //require_once '../library/functions.php';
 
 //PHP Motors Model
