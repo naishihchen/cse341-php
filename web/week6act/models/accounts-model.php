@@ -1,21 +1,22 @@
 <?php
 //Accounts Model
 
+require_once '../database_connect.php';
+
 //Site Registration Function
 function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword) {
     //Database Connection
-    $db = phpmotorsConnect();
 
     //SQL statement
-    $sql = 'INSERT INTO clients (clientFirstname, clientLastname,clientEmail, clientPassword)
-    VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword)';
+    $sql = 'INSERT INTO users (fullname, username, email, password, permissions)
+    VALUES (:clientFullname, :clientUsername, :clientEmail, :clientPassword, 1)';
 
     //Prepare Statement
     $stmt = $db->prepare($sql);
 
     //Replace placeholders with variables
-    $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);
-    $stmt->bindValue(':clientLastname', $clientLastname, PDO::PARAM_STR);
+    $stmt->bindValue(':clientFullname', $clientFullname, PDO::PARAM_STR);
+    $stmt->bindValue(':clientUsername', $clientUsername, PDO::PARAM_STR);
     $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
     $stmt->bindValue(':clientPassword', $clientPassword, PDO::PARAM_STR);
 
@@ -33,10 +34,8 @@ function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassw
 }
 
 //check for existing email address
-function emailConfirmation($clientEmail) {
-    // Create a connection object using the acme connection function
-    $db = phpmotorsConnect();   
-    $sql = 'SELECT clientEmail FROM clients WHERE clientEmail = :email';
+function emailConfirmation($clientEmail) {   
+    $sql = 'SELECT email FROM users WHERE email = :email';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':email', $clientEmail, PDO::PARAM_STR);
     $stmt->execute();
@@ -51,8 +50,7 @@ function emailConfirmation($clientEmail) {
 
    // Get client data based on an email address
 function getClient($clientEmail){
-    $db = phpmotorsConnect();
-    $sql = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, clientLevel, clientPassword FROM clients WHERE clientEmail = :clientEmail';
+    $sql = 'SELECT userid, fullname, username, email, permissions, password FROM users WHERE email = :clientEmail';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
     $stmt->execute();
@@ -64,8 +62,8 @@ function getClient($clientEmail){
    //Update Account
 function updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientId) {
     $db = phpmotorsConnect();
-    $sql = 'UPDATE clients SET clientFirstname = :clientFirstname, clientLastname = :clientLastname, '
-            . 'clientEmail = :clientEmail WHERE clientId = :clientId';
+    $sql = 'UPDATE users SET fullname = :clientFirstname, username = :clientLastname, '
+            . 'email = :clientEmail WHERE userd = :clientId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);
     $stmt->bindValue(':clientLastname', $clientLastname, PDO::PARAM_STR);
@@ -80,9 +78,9 @@ function updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientI
 //Get updated data
 function getClientUpdate($clientId){
  $db = phpmotorsConnect();
- $sql = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, clientLevel, clientPassword 
-         FROM clients
-         WHERE clientId = :clientId';
+ $sql = 'SELECT userd, fullname, username, email, permissions, password 
+         FROM users
+         WHERE userd = :clientId';
  $stmt = $db->prepare($sql);
  $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
  $stmt->execute();
@@ -94,7 +92,7 @@ function getClientUpdate($clientId){
 //Update Password
 function passUpdate($hashedPassword, $clientId) {
     $db = phpmotorsConnect();
-    $sql = 'UPDATE clients SET clientPassword = :hashedPassword WHERE clientId = :clientId';
+    $sql = 'UPDATE users SET password = :hashedPassword WHERE userid = :clientId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':hashedPassword', $hashedPassword, PDO::PARAM_STR);
     $stmt->bindValue(':clientId', $clientId, PDO::PARAM_STR);
