@@ -42,13 +42,13 @@ $action = filter_input(INPUT_POST, 'action');
     $uniqueEmail = emailConfirmation($clientEmail);
 
     if($uniqueEmail) {
-      $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+      $_SESSION['message'] = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
       include '../login.php';
       exit;
     }
 
     if (empty($clientFullname) || empty($clientUsername) || empty($clientEmail) || empty($checkPassword)) {
-      $message = '<p>Please provide information for all empty form fields.</p>';
+      $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
       include '../registration.php';
       exit;
     }
