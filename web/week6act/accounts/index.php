@@ -30,8 +30,8 @@ $action = filter_input(INPUT_POST, 'action');
 
   case 'registration':
 
-    $clientFirstname = filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING);
-    $clientLastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
+    $clientFullname = filter_input(INPUT_POST, 'clientFullname', FILTER_SANITIZE_STRING);
+    $clientUsername = filter_input(INPUT_POST, 'clientUsername', FILTER_SANITIZE_STRING);
     $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
     $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
     
@@ -47,7 +47,7 @@ $action = filter_input(INPUT_POST, 'action');
       exit;
     }
 
-    if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
+    if (empty($clientFullname) || empty($clientUsername) || empty($clientEmail) || empty($checkPassword)) {
       $message = '<p>Please provide information for all empty form fields.</p>';
       include '../registration.php';
       exit;
@@ -55,15 +55,15 @@ $action = filter_input(INPUT_POST, 'action');
 
     $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
 
-    $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $hashedPassword);
+    $regOutcome = regClient($clientFullname, $clientUsername, $clientEmail, $hashedPassword);
 
     if($regOutcome === 1){
-      setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
-      $_SESSION['message'] = "<p>Thanks for registering, $clientFirstname. Please use your email and password to login.</p>";
+      setcookie('firstname', $clientFullname, strtotime('+1 year'), '/');
+      $_SESSION['message'] = "<p>Thanks for registering, $clientFullname. Please use your email and password to login.</p>";
       header('Location: /web/week6act/accounts/?action=login');
       exit;
      } else {
-      $_SESSION['message'] = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+      $_SESSION['message'] = "<p>Sorry $clientFulltname, but the registration failed. Please try again.</p>";
       include '../registration.php';
       exit;
      }
@@ -96,11 +96,11 @@ $action = filter_input(INPUT_POST, 'action');
       exit;
     }
 
-    if(isset($_COOKIE['firstname'])) {
-      setcookie('firstname', "", time() -3600, '/');
+    if(isset($_COOKIE['fullname'])) {
+      setcookie('fullname', "", time() -3600, '/');
     }
 
-    setcookie('username', $clientData['clientFirstname'], strtotime('+1 year'), '/');
+    setcookie('username', $clientData['clientFullname'], strtotime('+1 year'), '/');
 
     $_SESSION['loggedin'] = TRUE;
 
