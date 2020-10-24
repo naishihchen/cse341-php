@@ -21,11 +21,11 @@ $action = filter_input(INPUT_POST, 'action');
 
  switch ($action){
   case 'login':
-    include '/week6act/login.php';
+    include '../login.php';
     break;
 
   case 'register':
-    include '/week6act/registration.php';
+    include '../registration.php';
     break;
 
   case 'registration':
@@ -43,13 +43,13 @@ $action = filter_input(INPUT_POST, 'action');
 
     if($uniqueEmail) {
       $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
-      include '/week6act/login.php';
+      include '../login.php';
       exit;
     }
 
     if (empty($clientFullname) || empty($clientUsername) || empty($clientEmail) || empty($checkPassword)) {
       $message = '<p>Please provide information for all empty form fields.</p>';
-      include '/week6act/registration.php';
+      include '../registration.php';
       exit;
     }
 
@@ -60,11 +60,11 @@ $action = filter_input(INPUT_POST, 'action');
     if($regOutcome === 1){
       setcookie('firstname', $clientFullname, strtotime('+1 year'), '/');
       $_SESSION['message'] = "<p>Thanks for registering, $clientFullname. Please use your email and password to login.</p>";
-      include '/week6act/registration.php';
+      include '../registration.php';
       exit;
      } else {
       $_SESSION['message'] = "<p>Sorry $clientFulltname, but the registration failed. Please try again.</p>";
-      include '/week6act/registration.php';
+      include '../registration.php';
       exit;
      }
 
@@ -80,7 +80,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     if (empty($loginEmail) || empty($checkLoginPassword)) {
       $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
-      include '/week6act/login.php';
+      include '../login.php';
       exit;
     }
 
@@ -92,7 +92,7 @@ $action = filter_input(INPUT_POST, 'action');
     }
     if(!$hashCheck) {
       $_SESSION['message'] = '<p>Incorrect password. Please check your password and try again.</p>';
-      include '/week6act/login.php';
+      include '../login.php';
       exit;
     }
 
@@ -109,7 +109,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     $_SESSION['clientData'] = $clientData;
 
-    include '/week6act/accountInfo.php';
+    include '../accountInfo.php';
   
     break;
 
@@ -198,7 +198,7 @@ $action = filter_input(INPUT_POST, 'action');
 
   default:
 
-    include '/week6act/items.php';
+    include '../items.php';
     break;
 
 }
