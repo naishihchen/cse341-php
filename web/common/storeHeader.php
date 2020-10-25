@@ -4,7 +4,7 @@
 		<a href="cart.php">Cart</a>
 		<?php
 			if ($_SESSION['loggedin'] == TRUE) {
-				echo "<h1><a href=\"accounts/index.php?action=logout\" id=\"logout\">Log Out</a></h1>";
+				echo "<h1><a href=\"index.php?action=logout\" id=\"logout\">Log Out</a></h1>";
     		} else {
         		echo "<a title=\"my-account\" href=\"/week6act/accounts/index.php?action=login\">Login/Register</a>";
 			}
