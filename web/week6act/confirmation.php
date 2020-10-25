@@ -15,7 +15,7 @@ $action = filter_input(INPUT_POST, 'action');
             foreach($_SESSION['cart'] as $product){
                 if ($product != "") {
                     $queryString = "INSERT INTO purchases (userid, productid, quantity, purchaseprice) VALUES (?, ?, ?, ?)"; 
-                    $sql->bindParam("ssss", $clientData['userid'], $product['productId'], $product['quantity'], $product['purchasePrice']);
+                    $sql->bindParam("ssss", $_SESSION['clientData']['userid'], $product['productId'], $product['quantity'], $product['purchasePrice']);
                     $sql = $db->prepare($queryString);
                     $sql->execute();
                 }    
