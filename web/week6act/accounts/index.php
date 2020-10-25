@@ -193,7 +193,7 @@ $action = filter_input(INPUT_POST, 'action');
   case 'logout':
     session_destroy();
     setcookie('username', "", time() -3600, '/');
-    header('Location: /week6act/items.php');
+    include '../items.php'
     break;
 
   default:
