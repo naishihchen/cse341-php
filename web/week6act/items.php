@@ -36,21 +36,21 @@ $action = filter_input(INPUT_POST, 'action');
  }
 switch ($action){
 
-  case 0:
+  case 1:
     $_SESSION['cart'][0]['productName'] = 'Lavender Soap';
     $_SESSION['cart'][0]['quantity'] = 1;
     $_SESSION['cart'][0]['productPrice'] = 11.00;
     $_SESSION['cart'][0]['productId'] = 1;
   break;
   
-  case 1:
+  case 2:
     $_SESSION['cart'][1]['productName'] = 'Mint Soap';
     $_SESSION['cart'][1]['quantity'] = 1;
     $_SESSION['cart'][1]['productPrice'] = 11.00;
     $_SESSION['cart'][1]['productId'] = 1;
   break;
   
-  case 2:
+  case 3:
     $_SESSION['cart'][2]['productName'] = 'Oatmeal Soap';
     $_SESSION['cart'][2]['quantity'] = 1;
     $_SESSION['cart'][2]['productPrice'] = 11.00;
