@@ -1,11 +1,28 @@
 <?php
 session_start();
+
+
+include 'database_connect.php';
+
 $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
   $action = filter_input(INPUT_GET, 'action');
  }
  switch($action){
     case 'checkout':
+
+        if (isset($clientData)) {
+            foreach($_SESSION['cart'] as $product){
+                if ($product != "") {
+                    $queryString = "INSERT INTO purchases (userid, productid, quantity, purchaseprice) VALUES (?, ?, ?, ?)"; 
+                    $sql->bindParam("ssss", $clientData['userid'], $product['productId'], $product['quantity'], $product['purchasePrice']);
+                    $sql = $db->prepare($queryString);
+                    $sql->execute();
+                }    
+            }
+        }
+
+
         $street = filter_input(INPUT_POST, 'street', FILTER_SANITIZE_STRING);
         $unit = filter_input(INPUT_POST, 'unit', FILTER_SANITIZE_STRING);
         $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
