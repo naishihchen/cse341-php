@@ -25,7 +25,7 @@ $action = filter_input(INPUT_POST, 'action');
     break;
 
   case 'register':
-    header("Location: /week6act/login.php");
+    header("Location: /week6act/registration.php");
     break;
 
   case 'registration':
