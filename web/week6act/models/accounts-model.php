@@ -2,7 +2,7 @@
 //Accounts Model
 
 //Site Registration Function
-function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword) {
+function regClient($clientFullname, $clientUsername, $clientEmail, $clientPassword) {
     //Database Connection
     $db = soapStoreConnect();
 
