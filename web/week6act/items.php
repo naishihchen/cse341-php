@@ -25,7 +25,7 @@
   	$queryResults .= "<h3>" . $row['productname'] . "</h3><br>";
 	$queryResults .= "<p>" . $row['productdescription'] . "</p>";
 	$queryResults .= "</div>";
-	$queryResults .= "<a href='items.php?action=" . $row['productid'] . "'>";
+	$queryResults .= "<a href='items.php?action=" . $row['productid'] . "'>Add to Cart</a>";
 }
 
 	$queryResults .= "</div>";
