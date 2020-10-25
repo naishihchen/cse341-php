@@ -43,13 +43,13 @@ $action = filter_input(INPUT_POST, 'action');
 
     if($uniqueEmail) {
       $_SESSION['message'] = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
-      include '../login.php';
+      header("Location: /week6act/login.php");
       exit;
     }
 
     if (empty($clientFullname) || empty($clientUsername) || empty($clientEmail) || empty($checkPassword)) {
       $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
-      include '../registration.php';
+      header("Location: /week6act/registration.php");
       exit;
     }
 
@@ -60,11 +60,11 @@ $action = filter_input(INPUT_POST, 'action');
     if($regOutcome === 1){
       setcookie('firstname', $clientFullname, strtotime('+1 year'), '/');
       $_SESSION['message'] = "<p>Thanks for registering, $clientFullname. Please use your email and password to login.</p>";
-      include '../login.php';
+      header("Location: /week6act/login.php");
       exit;
      } else {
       $_SESSION['message'] = "<p>Sorry $clientFulltname, but the registration failed. Please try again.</p>";
-      include '../registration.php';
+      header("Location: /week6act/registration.php");
       exit;
      }
 
@@ -80,7 +80,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     if (empty($loginEmail) || empty($checkLoginPassword)) {
       $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
-      include '../login.php';
+      header("Location: /week6act/login.php");
       exit;
     }
 
@@ -92,7 +92,7 @@ $action = filter_input(INPUT_POST, 'action');
     }
     if(!$hashCheck) {
       $_SESSION['message'] = '<p>Incorrect password. Please check your password and try again.</p>';
-      include '../login.php';
+      header("Location: /week6act/login.php");
       exit;
     }
 
@@ -193,12 +193,12 @@ $action = filter_input(INPUT_POST, 'action');
   case 'logout':
     session_destroy();
     setcookie('username', "", time() -3600, '/');
-    include '../items.php';
+    header("Location: /week6act/items.php");
     break;
 
   default:
 
-    include '../items.php';
+    header("Location: /week6act/items.php");
     break;
 
 }

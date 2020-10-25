@@ -18,8 +18,8 @@
                 echo $_SESSION['message'];
             }
             ?>
-            
-            <form action="index.php" method="post">
+
+            <form action="accounts/index.php" method="post">
                     <label for="fullname">Full Name: </label><input type="text" name="clientFullname" id="fname" required <?php if(isset($clientFullname)){echo "value='$clientFullname'";}  ?>><br>
                     <label for="username">User Name: </label><input type="text" name="clientUsername" id="uname" required <?php if(isset($clientUsername)){echo "value='$clientUsername'";}  ?>><br>
                     <label for="email">Email address: </label><input type="email" name="clientEmail" id="email" required <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?>><br>
