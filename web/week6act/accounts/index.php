@@ -109,7 +109,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     $_SESSION['clientData'] = $clientData;
 
-    include '../accountInfo.php';
+    header("Location: /week6act/accountInfo.php");
   
     break;
 
