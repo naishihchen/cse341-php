@@ -29,7 +29,7 @@
             
                 <div id="register">
             <p>Not Registered? Click Here!</p>
-            <a href="index.php?action=register">Register</a>
+            <a href="accounts/index.php?action=register">Register</a>
                 </div>
             </div>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
