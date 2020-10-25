@@ -30,7 +30,7 @@
 
 	foreach($_SESSION['cart'] as $product){
 		if ($product != "") {
-			$cartContents .= "<div class='cart-item'><p>". $product]['productName'] ."</p><a href='cart.php?action=". $product['productName'] ."'>Remove</a></div> <br>";
+			$cartContents .= "<div class='cart-item'><p>". $product['productName'] ."</p><a href='cart.php?action=". $product['productName'] ."'>Remove</a></div> <br>";
 		}
 	} 
 
