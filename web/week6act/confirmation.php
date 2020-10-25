@@ -11,7 +11,7 @@ $action = filter_input(INPUT_POST, 'action');
  switch($action){
     case 'checkout':
 
-        if (isset($clientData)) {
+        if (isset($_SESSION['clientData'])) {
             foreach($_SESSION['cart'] as $product){
                 if ($product != "") {
                     $queryString = "INSERT INTO purchases (userid, productid, quantity, purchaseprice) VALUES (?, ?, ?, ?)"; 
