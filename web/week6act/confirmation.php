@@ -46,7 +46,7 @@ $action = filter_input(INPUT_POST, 'action');
         if (isset($_SESSION['cart'])) {    
             foreach($_SESSION['cart'] as $product){
                 if ($product != "") {
-                    $customers .= "<div class='cart-item'><p>".$product."</p></div> <br>";
+                    $customers .= "<div class='cart-item'><p>" . $product['productName'] . "</p></div> <br>";
                 }
             }
         } 
