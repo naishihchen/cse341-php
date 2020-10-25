@@ -87,10 +87,8 @@ $action = filter_input(INPUT_POST, 'action');
     //Get client data based on email email
     $clientData = getClient($loginEmail);
 
-    var_dump($clientData);
-
     if($checkLoginPassword) {
-      $hashCheck = password_verify($loginPassword, $clientData['clientPassword']);
+      $hashCheck = password_verify($loginPassword, $clientData['password']);
     }
     if(!$hashCheck) {
       $_SESSION['message'] = '<p>Incorrect password. Please check your password and try again.</p>';

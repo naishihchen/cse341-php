@@ -14,10 +14,11 @@
 
             <?php
           
-            if (isset($message)) {
-                echo $message;
+            if (isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
             }
             ?>
+            
             <form action="index.php" method="post">
                     <label for="fullname">Full Name: </label><input type="text" name="clientFullname" id="fname" required <?php if(isset($clientFullname)){echo "value='$clientFullname'";}  ?>><br>
                     <label for="username">User Name: </label><input type="text" name="clientUsername" id="uname" required <?php if(isset($clientUsername)){echo "value='$clientUsername'";}  ?>><br>
