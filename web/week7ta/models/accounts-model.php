@@ -2,21 +2,19 @@
 //Accounts Model
 
 //Site Registration Function
-function regClient($clientFullname, $clientUsername, $clientEmail, $clientPassword) {
+function registerClient($clientUsername, $clientPassword) {
     //Database Connection
     $db = soapStoreConnect();
 
     //SQL statement
-    $sql = 'INSERT INTO users (fullname, username, email, password, permissions)
-    VALUES (:clientFullname, :clientUsername, :clientEmail, :clientPassword, 1)';
+    $sql = 'INSERT INTO usersta (username, password, permissions)
+    VALUES (:clientUsername, :clientPassword, 1)';
 
     //Prepare Statement
     $stmt = $db->prepare($sql);
 
     //Replace placeholders with variables
-    $stmt->bindValue(':clientFullname', $clientFullname, PDO::PARAM_STR);
     $stmt->bindValue(':clientUsername', $clientUsername, PDO::PARAM_STR);
-    $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
     $stmt->bindValue(':clientPassword', $clientPassword, PDO::PARAM_STR);
 
     //Execute statement
