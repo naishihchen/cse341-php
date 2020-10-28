@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	if (!isset($clientData)){
+	if (!isset($_SESSION['clientData'])){
 		header("Location: /week7ta/login.php");
 	}
 ?>
