@@ -7,8 +7,8 @@ function registerClient($clientUsername, $clientPassword) {
     $db = soapStoreConnect();
 
     //SQL statement
-    $sql = 'INSERT INTO usersta (username, password, permissions)
-    VALUES (:clientUsername, :clientPassword, 1)';
+    $sql = 'INSERT INTO usersta (username, password)
+    VALUES (:clientUsername, :clientPassword)';
 
     //Prepare Statement
     $stmt = $db->prepare($sql);
