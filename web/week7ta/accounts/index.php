@@ -21,11 +21,11 @@ $action = filter_input(INPUT_POST, 'action');
 
  switch ($action){
   case 'login':
-    header("Location: /week6act/login.php");
+    header("Location: /week7ta/login.php");
     break;
 
   case 'register':
-    header("Location: /week6act/registration.php");
+    header("Location: /week7ta/registration.php");
     break;
 
   case 'registration':
@@ -37,7 +37,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     if (empty($clientUsername) || empty($checkPassword)) {
       $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
-      header("Location: /week6act/registration.php");
+      header("Location: /week7ta/registration.php");
       exit;
     }
 
@@ -48,11 +48,11 @@ $action = filter_input(INPUT_POST, 'action');
     if($regOutcome === 1){
       setcookie('firstname', $clientFullname, strtotime('+1 year'), '/');
       $_SESSION['message'] = "<p>Thanks for registering, $clientFullname. Please use your email and password to login.</p>";
-      header("Location: /week6act/login.php");
+      header("Location: /week7ta/login.php");
       exit;
      } else {
       $_SESSION['message'] = "<p>Sorry $clientFulltname, but the registration failed. Please try again.</p>";
-      header("Location: /week6act/registration.php");
+      header("Location: /week7ta/registration.php");
       exit;
      }
 
@@ -68,7 +68,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     if (empty($loginEmail) || empty($checkLoginPassword)) {
       $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
-      header("Location: /week6act/login.php");
+      header("Location: /week7ta/login.php");
       exit;
     }
 
@@ -80,7 +80,7 @@ $action = filter_input(INPUT_POST, 'action');
     }
     if(!$hashCheck) {
       $_SESSION['message'] = '<p>Incorrect password. Please check your password and try again.</p>';
-      header("Location: /week6act/login.php");
+      header("Location: /week7ta/login.php");
       exit;
     }
 
@@ -97,7 +97,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     $_SESSION['clientData'] = $clientData;
 
-    header("Location: /week6act/accountInfo.php");
+    header("Location: /week7ta/accountInfo.php");
   
     break;
 
@@ -181,12 +181,12 @@ $action = filter_input(INPUT_POST, 'action');
   case 'logout':
     session_destroy();
     setcookie('username', "", time() -3600, '/');
-    header("Location: /week6act/items.php");
+    header("Location: /week7ta/items.php");
     break;
 
   default:
 
-    header("Location: /week6act/items.php");
+    header("Location: /week7ta/items.php");
     break;
 
 }
