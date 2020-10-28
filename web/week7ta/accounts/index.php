@@ -60,20 +60,19 @@ $action = filter_input(INPUT_POST, 'action');
 
   case 'Logging':
 
-    $loginEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
+    $loginUsername = filter_input(INPUT_POST, 'clientUsername', FILTER_SANITIZE_EMAIL);
     $loginPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
 
-    $loginEmail = checkEmail($loginEmail);
     $checkLoginPassword = checkPassword($loginPassword);
 
-    if (empty($loginEmail) || empty($checkLoginPassword)) {
+    if (empty($loginUsername) || empty($checkLoginPassword)) {
       $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
-      header("Location: /week7ta/login.php");
+      header("Location: /week7ta/registration.php");
       exit;
     }
 
     //Get client data based on email email
-    $clientData = getClient($loginEmail);
+    $clientData = getClient($loginUsername);
 
     if($checkLoginPassword) {
       $hashCheck = password_verify($loginPassword, $clientData['password']);
@@ -84,11 +83,11 @@ $action = filter_input(INPUT_POST, 'action');
       exit;
     }
 
-    if(isset($_COOKIE['fullname'])) {
-      setcookie('fullname', "", time() -3600, '/');
+    if(isset($_COOKIE['username'])) {
+      setcookie('username', "", time() -3600, '/');
     }
 
-    setcookie('username', $clientData['clientFullname'], strtotime('+1 year'), '/');
+    setcookie('username', $clientData['username'], strtotime('+1 year'), '/');
 
     $_SESSION['loggedin'] = TRUE;
 

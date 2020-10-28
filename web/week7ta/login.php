@@ -19,7 +19,7 @@
 
             <div id="form">
             <form action="accounts/index.php" method="post">
-                <label for="email">Email address: </label><input type="email" name="clientEmail" id="email" required <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?>><br>
+                <label for="username">Username: </label><input type="text" name="clientUsername" id="username" required <?php if(isset($clientUsername)){echo "value='$clientUsername'";}  ?>><br>
                 <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span> 
                 <label for="password">Password: </label>
                 <input type="password" id="password" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" ><br>

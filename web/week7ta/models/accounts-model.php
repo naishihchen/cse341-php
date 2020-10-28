@@ -47,11 +47,11 @@ function emailConfirmation($clientEmail) {
    }
 
    // Get client data based on an email address
-function getClient($clientEmail){
+function getClient($clientUsername){
     $db = soapStoreConnect();
-    $sql = 'SELECT userid, fullname, username, email, permissions, password FROM users WHERE email = :clientEmail';
+    $sql = 'SELECT userid, username, password FROM usersta WHERE username = :clientUsername';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
+    $stmt->bindValue(':clientUsername', $clientUsername, PDO::PARAM_STR);
     $stmt->execute();
     $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
