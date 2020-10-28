@@ -43,10 +43,10 @@ $action = filter_input(INPUT_POST, 'action');
 
     $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
 
-    $regOutcome = regClient( $clientUsername, $hashedPassword);
+    $regOutcome = regClient($clientUsername, $hashedPassword);
 
     if($regOutcome === 1){
-      setcookie('firstname', $clientFullname, strtotime('+1 year'), '/');
+      setcookie('firstname', $clientUsername, strtotime('+1 year'), '/');
       $_SESSION['message'] = "<p>Thanks for registering, $clientFullname. Please use your email and password to login.</p>";
       header("Location: /week7ta/login.php");
       exit;
