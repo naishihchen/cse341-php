@@ -96,7 +96,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     $_SESSION['clientData'] = $clientData;
 
-    header("Location: /week7ta/accountInfo.php");
+    header("Location: /week7ta/registration.php");
   
     break;
 
