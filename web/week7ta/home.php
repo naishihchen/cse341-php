@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	if (!isset($clientData)){
 		header("Location: /week7ta/login.php");
 	}
