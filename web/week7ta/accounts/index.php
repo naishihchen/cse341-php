@@ -35,7 +35,7 @@ $action = filter_input(INPUT_POST, 'action');
     
     $checkPassword = checkPassword($clientPassword);
 
-    if empty($clientUsername) || empty($checkPassword)) {
+    if (empty($clientUsername) || empty($checkPassword)) {
       $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
       header("Location: /week6act/registration.php");
       exit;
