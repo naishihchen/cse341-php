@@ -30,24 +30,12 @@ $action = filter_input(INPUT_POST, 'action');
 
   case 'registration':
 
-    $clientFullname = filter_input(INPUT_POST, 'clientFullname', FILTER_SANITIZE_STRING);
     $clientUsername = filter_input(INPUT_POST, 'clientUsername', FILTER_SANITIZE_STRING);
-    $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
     $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
     
-    $clientEmail = checkEmail($clientEmail);
     $checkPassword = checkPassword($clientPassword);
 
-    //check for existing email address
-    $uniqueEmail = emailConfirmation($clientEmail);
-
-    if($uniqueEmail) {
-      $_SESSION['message'] = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
-      header("Location: /week6act/login.php");
-      exit;
-    }
-
-    if (empty($clientFullname) || empty($clientUsername) || empty($clientEmail) || empty($checkPassword)) {
+    if empty($clientUsername) || empty($checkPassword)) {
       $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
       header("Location: /week6act/registration.php");
       exit;
@@ -55,7 +43,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
 
-    $regOutcome = regClient($clientFullname, $clientUsername, $clientEmail, $hashedPassword);
+    $regOutcome = regClient( $clientUsername, $hashedPassword);
 
     if($regOutcome === 1){
       setcookie('firstname', $clientFullname, strtotime('+1 year'), '/');
