@@ -17,6 +17,7 @@
 			<a href="week6ta/week6ta.php">Week 6 Team Activity</a>
 			<a href="week6act/items.php">Week 6 Team Activity</a>
 			<a href="week7ta/home.php">Week 7 Team Activity</a>
+			<a href="project1/items.php">Project 1</a>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
 		</main>
 	</body>
