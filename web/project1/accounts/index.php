@@ -110,7 +110,6 @@ $action = filter_input(INPUT_POST, 'action');
     array_pop($clientData);
 
     $_SESSION['clientData'] = $clientData;
-    var_dump($_SESSION['clientData']);
 
     header("Location: /project1/accountInfo.php");
   
