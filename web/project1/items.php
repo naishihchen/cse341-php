@@ -1,6 +1,10 @@
 <?php 
 	session_start();
 
+	if (!isset($_SESSION['loggedin'])) {
+		$_SESSION['loggedin'] == false;
+	}
+	
 	$_SESSION["accountNum"] = 0;
 
 	include 'database_connect.php';
