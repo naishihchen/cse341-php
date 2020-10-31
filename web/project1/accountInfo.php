@@ -1,8 +1,8 @@
 <?php 
 	
-	if ($_SESSION['loggedin'] == false) {
-		header("Location: /project1/items.php");
-	}
+	// if ($_SESSION['loggedin'] == false) {
+	// 	header("Location: /project1/items.php");
+	// }
 
 	session_start();
 

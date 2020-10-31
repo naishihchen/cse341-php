@@ -6,7 +6,7 @@
 	<div id="login-registration">
 		<?php
 			if ($_SESSION['loggedin'] == TRUE) {
-				echo "<h1><a href=\"accountInfo.php\">Log Out</a></h1>";
+				echo "<h1><a href=\"accountInfo.php\">My Account</a></h1>";
     		} else {
         		echo "<a title=\"my-account\" href=\"accounts/index.php?action=login\">Login/Register</a>";
 			}
