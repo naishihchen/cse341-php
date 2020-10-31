@@ -15,13 +15,6 @@
 		  $_SESSION['cart'] = [];
 	}
 
-	$queryString = "SELECT userid FROM users WHERE fullname = 'Jane Doe';"; 
-	$select = $db->prepare($queryString);
-	$select->execute();
-	$userId = $select->fetchAll(PDO::FETCH_ASSOC);
-
-	$_SESSION['userId'] = $userId[0]['userid'];
-
 	$queryResults = "<div id='soaps' class='hello'>";
 
 	foreach ($db->query('SELECT * FROM products') as $row)
