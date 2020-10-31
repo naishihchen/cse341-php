@@ -5,6 +5,8 @@
 		$_SESSION['loggedin'] == false;
 	}
 	
+	var_dump($_SESSION);
+
 	$_SESSION["accountNum"] = 0;
 
 	include 'database_connect.php';
