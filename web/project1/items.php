@@ -20,7 +20,7 @@
   	$queryResults .= "<img src='" . $row['productimage'] . "'><br>";
   	$queryResults .= "<h3>" . $row['productname'] . "</h3><br>";
 	$queryResults .= "<p>" . $row['productdescription'] . "</p>";
-	$queryResults .= "<label for='points'>Quantity:</label><br>";
+	$queryResults .= "<label for='" . $row['productname'] . " Quantity'>Quantity:</label><br>";
   	$queryResults .= "<input type='number' class='quantity' name='" . $row['productname'] . " Quantity' step='1' min='0' onkeypress='return event.charCode >= 48'>";
 	$queryResults .= "</div>";
 }
