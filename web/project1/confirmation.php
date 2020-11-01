@@ -18,7 +18,7 @@ $action = filter_input(INPUT_POST, 'action');
                     $sql->bindValue(":userid", $_SESSION['clientData']['userid'], PDO::PARAM_INT);
                     $sql->bindValue(":productid", $product['productId'], PDO::PARAM_INT);
                     $sql->bindValue(":quantity", $product['quantity'],PDO::PARAM_INT);
-                    $sql->bindValue(":purchaseprice", $product['purchasePrice'], PDO::PARAM_INT);
+                    $sql->bindValue(":purchaseprice", $product['productPrice'], PDO::PARAM_INT);
                     $sql->execute();
                 }    
             }
