@@ -64,7 +64,7 @@ function getClient($clientEmail){
 function updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientId) {
     $db = soapStoreConnect();
     $sql = 'UPDATE users SET fullname = :clientFirstname, username = :clientLastname, '
-            . 'email = :clientEmail WHERE userd = :clientId';
+            . 'email = :clientEmail WHERE userid = :clientId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);
     $stmt->bindValue(':clientLastname', $clientLastname, PDO::PARAM_STR);
