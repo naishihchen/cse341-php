@@ -113,82 +113,82 @@ $action = filter_input(INPUT_POST, 'action');
   
     break;
 
-  // case 'accountUpdate':
-  //   include '../view/client-update.php';
-  //   break;
+  case 'accountUpdate':
+    header("Location: /project1/client-update.php");
+    break;
 
-  // case 'updateAccount':
-  //   $clientFirstname = filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING);
-  //   $clientLastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
-  //   $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
-  //   $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
-  //   $clientEmail = checkEmail($clientEmail);
+  case 'updateAccount':
+    $clientFullname = filter_input(INPUT_POST, 'clientFullname', FILTER_SANITIZE_STRING);
+    $clientUsername = filter_input(INPUT_POST, 'clientUsername', FILTER_SANITIZE_STRING);
+    $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
+    $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
+    $clientEmail = checkEmail($clientEmail);
     
-  //   $existingEmail = emailConfirmation($clientEmail);
+    $existingEmail = emailConfirmation($clientEmail);
     
-  //   if ($clientEmail == $_SESSION['clientData']['clientEmail']) {
-  //       $message = '<p>That email is taken. Please choose another.</p>';
-  //         include '../view/client-update.php';
-  //         exit;
-  //   } elseif ($existingEmail) {
-  //       $message = '<p>That email is taken. Please choose another.</p>';
-  //         include '../view/client-update.php';
-  //         exit;
-  //   } else {
-  //   }
+    if ($clientEmail == $_SESSION['clientData']['clientEmail']) {
+        $_SESSION['message'] = '<p>That email is taken. Please choose another.</p>';
+          header("Location: /project1/client-update.php");
+          exit;
+    } elseif ($existingEmail) {
+        $_SESSION['message'] = '<p>That email is taken. Please choose another.</p>';
+          header("Location: /project1/client-update.php");
+          exit;
+    } else {
+    }
     
     
     
-  //   if(empty($clientEmail)){
-  //       $message = '<p>Please provide an email address.</p>';
-  //       include '../view/client-update.php';
-  //       exit; 
-  //   }
+    if(empty($clientEmail)){
+        $_SESSION['message'] = '<p>Please provide an email address.</p>';
+        header("Location: /project1/client-update.php");
+        exit; 
+    }
     
-  //   $newInfo = updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientId);
+    $newInfo = updateAccount($clientFullname, $clientUsername, $clientEmail, $clientId);
     
-  //   $clientUpdatedData = getClientUpdate($clientId);
+    $clientUpdatedData = getClientUpdate($clientId);
     
-  //   $_SESSION['clientData'] = $clientUpdatedData;
+    $_SESSION['clientData'] = $clientUpdatedData;
     
-  //   if($newInfo === 1){
-  //       $message = "<p class='notice'>Account info successfully changed.</p>";
-  //       include '../view/admin.php';
-  //       exit;
-  //   } else {
-  //       $message = "<p>Sorry $clientId, but the update failed. Please try again.</p>";
-  //       include '../view/admin.php';
-  //       exit;
-  //   }
+    if($newInfo === 1){
+        $_SESSION['message'] =  "<p class='notice'>Account info successfully changed.</p>";
+        header("Location: /project1/accountInfo.php");
+        exit;
+    } else {
+        $_SESSION['message'] =  "<p>Sorry $clientId, but the update failed. Please try again.</p>";
+        header("Location: /project1/accountInfo.php");
+        exit;
+    }
     
-  //   include '../view/admin.php';
-  //   break;
+    header("Location: /project1/accountInfo.php");
+    break;
 
-  // case 'newPassword':
-  //   $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+  case 'newPassword':
+    $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
      
-  //   $checkPassword = checkPassword($clientPassword);
-  //   // If the password doesn't match, create an error
-  //   if(!$checkPassword) {
-  //       $message = '<p class="notice">Please check your password and try again.</p>';
-  //       include '../view/client-update.php';
-  //       exit;
-  //   } else {
-  //       $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
-  //   }
+    $checkPassword = checkPassword($clientPassword);
+    // If the password doesn't match, create an error
+    if(!$checkPassword) {
+        $message = '<p class="notice">Please check your password and try again.</p>';
+        header("Location: /project1/client-update.php");
+        exit;
+    } else {
+        $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+    }
     
-  //   $passwordResults = passUpdate($hashedPassword, $_SESSION['clientData']['clientId']);
+    $passwordResults = passUpdate($hashedPassword, $_SESSION['clientData']['clientId']);
     
-  //   if ($passwordResults) {
-  //       $message = "<p>Password successfully changed</p>";
-  //       include 'index.php';
-  //       exit;
-  //   } else {
-  //       $message = "<p>Sorry $clientFirstname, but the update failed. Please try again.</p>";
-  //       include 'index.php';
-  //       exit;
-  //   }
-  //   break;
+    if ($passwordResults) {
+        $_SESSION['message'] = "<p>Password successfully changed</p>";
+        header("Location: /project1/accountInfo.php");
+        exit;
+    } else {
+        $_SESSION['message'] = "<p>Sorry $clientFirstname, but the update failed. Please try again.</p>";
+        header("Location: /project1/accountInfo.php");
+        exit;
+    }
+    break;
 
   case 'logout':
     session_destroy();

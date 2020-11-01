@@ -1,6 +1,6 @@
 <?php 
 	
-	// if ($_SESSION['loggedin'] == false) {
+	// if ($_SESSION['loggedin'] == FALSE) {
 	// 	header("Location: /project1/items.php");
 	// }
 
@@ -39,6 +39,8 @@
 			} ?>
 
 			<p>Visit our <a href="purchaseSearch.php">Receipt Search</a> page to search for past purchases<p>
+			<br>
+			<a href="accounts/index.php?action=accountUpdate">Update Account Info</a>
 			<br>
 			<a href="accounts/index.php?action=logout" id="logout">Log Out</a>
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeFooter.php'; ?>
