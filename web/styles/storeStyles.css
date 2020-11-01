@@ -254,3 +254,11 @@ footer {
 #password-form input {
 	margin: 10px;
 }
+
+#purchase-record {
+	border-bottom: solid 1px black;
+}
+
+#purchase-record p {
+	margin: 5px;
+}
