@@ -79,9 +79,9 @@ function updateAccount($clientFirstname, $clientLastname, $clientEmail, $clientI
 //Get updated data
 function getClientUpdate($clientId){
  $db = soapStoreConnect();
- $sql = 'SELECT userd, fullname, username, email, permissions, password 
+ $sql = 'SELECT userid, fullname, username, email, permissions, password 
          FROM users
-         WHERE userd = :clientId';
+         WHERE userid = :clientId';
  $stmt = $db->prepare($sql);
  $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
  $stmt->execute();
