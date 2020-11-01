@@ -125,6 +125,17 @@ footer {
 	height: 100px;
 }
 
+.description {
+	display: flex;
+	flex-direction: row;
+}
+
+.soap-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 #progress-buttons {
 	display: flex;
 	justify-content: center;
