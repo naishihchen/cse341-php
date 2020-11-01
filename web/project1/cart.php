@@ -18,22 +18,18 @@
 	}
 
 	if ($mintQuantity > 0) {
-		$_SESSION['cart'][0]['productName'] = 'Mint Soap';
-    	$_SESSION['cart'][0]['quantity'] = $mintQuantity;
-    	$_SESSION['cart'][0]['productPrice'] = 11.00;
-    	$_SESSION['cart'][0]['productId'] = 1;
+		$_SESSION['cart'][1]['productName'] = 'Mint Soap';
+    	$_SESSION['cart'][1]['quantity'] = $mintQuantity;
+    	$_SESSION['cart'][1]['productPrice'] = 11.00;
+    	$_SESSION['cart'][1]['productId'] = 1;
 	}
 
 	if ($oatQuantity > 0) {
-		$_SESSION['cart'][0]['productName'] = 'Oatmeal Soap';
-    	$_SESSION['cart'][0]['quantity'] = $oatQuantity;
-    	$_SESSION['cart'][0]['productPrice'] = 11.00;
-    	$_SESSION['cart'][0]['productId'] = 1;
+		$_SESSION['cart'][2]['productName'] = 'Oatmeal Soap';
+    	$_SESSION['cart'][2]['quantity'] = $oatQuantity;
+    	$_SESSION['cart'][2]['productPrice'] = 11.00;
+    	$_SESSION['cart'][2]['productId'] = 1;
 	}
-
-	var_dump($lavQuantity);
-	var_dump($mintQuantity);
-	var_dump($mintQuantity);
 
 	var_dump($_SESSION['cart']);
 
