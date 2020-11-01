@@ -35,7 +35,8 @@
                     <label for="clientUsername">User Name: </label><input type="text" name="clientUsername" id="clientUsername" value="<?php if(isset($clientUsername)){echo $clientUsername;} 
                             elseif(isset($_SESSION['clientData']['username'])) {echo $_SESSION['clientData']['username']; } ?>" required><br>
                     <label for="clientEmail">Email address: </label><input type="email" name="clientEmail" id="clientEmail" value="<?php if(isset($clientEmail)){echo $clientEmail;} 
-                            elseif(isset($_SESSION['clientData']['email'])) {echo $_SESSION['clientData']['email']; } ?>" required>                
+                            elseif(isset($_SESSION['clientData']['email'])) {echo $_SESSION['clientData']['email']; } ?>" required>
+                            <br>                
                 <!-- Add the action name - value pair -->
                 <input type="hidden" name="clientId" value="<?php if(isset($_SESSION['clientData']['userid'])){ echo $_SESSION['clientData']['userid'];} 
                         elseif(isset($clientId)){ echo $clientId; } ?>">
@@ -55,6 +56,7 @@
                 
                 <form method="post" action="accounts/index.php">
                     <span>Entering a password here will change the current password. Password must not be the same as the old password. Password must be 8 characters long, contain one uppercase letter, one number and one special character.</span>
+                    <br>
                     <label for="password">Password: </label>
                     <input type="password" name="clientPassword" id="clientPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
                 <input type="submit" value="Update Password"><!--
