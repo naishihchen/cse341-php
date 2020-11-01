@@ -172,6 +172,12 @@ footer {
     margin: 20px;
 }
 
+#form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 #progress-buttons input {
 	margin: 20px;
 }

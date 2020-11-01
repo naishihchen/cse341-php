@@ -17,7 +17,7 @@
 	foreach ($db->query('SELECT * FROM products') as $row)
 {
 	$queryResults .= "<div class='description'>";
-	$queryResults .= "<div class='soap_pic'>";
+	$queryResults .= "<div class='soap-pic'>";
   	$queryResults .= "<img src='" . $row['productimage'] . "' alt='soap-image'><br>";
   	$queryResults .= "</div>";
   	$queryResults .= "<div class='soap-info'>";
