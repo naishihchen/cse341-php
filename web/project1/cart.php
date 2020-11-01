@@ -31,8 +31,6 @@
     	$_SESSION['cart'][2]['productId'] = 1;
 	}
 
-	var_dump($_SESSION['cart']);
-
 	if (isset( $_SESSION['cart'] )){	
 
  	switch ($action){
