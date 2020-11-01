@@ -26,7 +26,7 @@ $product = htmlspecialchars($_GET["product"]);
             <div id="purchase-log">
                 <?php
                     if (isset($product)) {
-                        foreach ($db->query("SELECT purchaseTime, quantity, purchasePrice FROM purchases pu JOIN products pr ON pu.productId = pr.productId WHERE productName = '" . $product . "' AND userid = '" . $_SESSION['clientData']['userId'] . "';") as $row)
+                        foreach ($db->query("SELECT purchasetime, quantity, purchaseprice FROM purchases pu JOIN products pr ON pu.productId = pr.productId WHERE productName = '" . $product . "' AND userid = '" . $_SESSION['clientData']['userid'] . "';") as $row)
                         {
                             echo "<div id='purchase-record'>";
                             echo "<p>Product: " . $product . "</p><br>";
