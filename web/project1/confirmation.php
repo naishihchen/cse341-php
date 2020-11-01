@@ -14,9 +14,11 @@ $action = filter_input(INPUT_POST, 'action');
         if (isset($_SESSION['clientData'])) {
             foreach($_SESSION['cart'] as $product){
                 if ($product != "") {
-                    $sql = "INSERT INTO purchases (userid, productid, quantity, purchaseprice) VALUES (?, ?, ?, ?)"; 
-                    $sql->bindValue("ssss", $_SESSION['clientData']['userid'], $product['productId'], $product['quantity'], $product['purchasePrice']);
-                    $sql = $db->prepare($queryString);
+                    $sql = $db->prepare("INSERT INTO purchases (userid, productid, quantity, purchaseprice) VALUES (:userid, :productid, :quantity, :purchaseprice)");
+                    $sql->bindValue(":userid", $_SESSION['clientData']['userid'], PDO::PARAM_INt);
+                    $sql->bindValue(":productid", $product['productId'], PDO::PARAM_INT);
+                    $sql->bindValue(":quantity", $product['quantity'],PDO::PARAM_INT);
+                    $sql->bindValue(":purchaseprice", $product['purchasePrice'], PDO::PARAM_INT);
                     $sql->execute();
                 }    
             }
