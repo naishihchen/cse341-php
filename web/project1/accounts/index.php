@@ -177,7 +177,7 @@ $action = filter_input(INPUT_POST, 'action');
         $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
     }
     
-    $passwordResults = passUpdate($hashedPassword, $_SESSION['clientData']['clientId']);
+    $passwordResults = passUpdate($hashedPassword, $_SESSION['clientData']['userid']);
     
     if ($passwordResults) {
         $_SESSION['message'] = "<p>Password successfully changed</p>";
