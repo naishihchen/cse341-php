@@ -247,10 +247,10 @@ footer {
 	margin: 10px;
 }
 
-#password {
+#password-form {
 	width: 70%;
 }
 
-#password input {
+#password-form input {
 	margin: 10px;
 }

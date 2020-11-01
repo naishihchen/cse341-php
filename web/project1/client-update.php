@@ -46,7 +46,7 @@
             
             
             <h2>New Password</h2>
-            <div id="password">
+            <div id="password-form">
                 <?php
                     if (isset($message)) {
                     echo $message;
@@ -55,6 +55,7 @@
                 
                 <form method="post" action="accounts/index.php">
                     <span>Entering a password here will change the current password. Password must not be the same as the old password. Password must be 8 characters long, contain one uppercase letter, one number and one special character.</span>
+                    <label for="password">Password: </label>
                     <input type="password" name="clientPassword" id="clientPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
                 <input type="submit" value="Update Password"><!--
                 
