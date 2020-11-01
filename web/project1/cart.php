@@ -25,6 +25,32 @@
 	  break;
 	}
 
+	$lavQuantity = filter_input(INPUT_POST, 'Lavender Soap Quantity', FILTER_SANITIZE_NUMBER_INT);
+	$mintQuantity = filter_input(INPUT_POST, 'Mint Soap Quantity', FILTER_SANITIZE_NUMBER_INT);
+	$oatQuantity = filter_input(INPUT_POST, 'Oatmeal Soap Quantity', FILTER_SANITIZE_NUMBER_INT);
+
+	if ($lavQuantity > 0) {
+		$_SESSION['cart'][0]['productName'] = 'Lavender Soap';
+    	$_SESSION['cart'][0]['quantity'] = $lavQuantity;
+    	$_SESSION['cart'][0]['productPrice'] = 11.00;
+    	$_SESSION['cart'][0]['productId'] = 1;
+	}
+
+	if ($mintQuantity > 0) {
+		$_SESSION['cart'][0]['productName'] = 'Mint Soap';
+    	$_SESSION['cart'][0]['quantity'] = $mintQuantity;
+    	$_SESSION['cart'][0]['productPrice'] = 11.00;
+    	$_SESSION['cart'][0]['productId'] = 1;
+	}
+
+	if ($oatQuantity > 0) {
+		$_SESSION['cart'][0]['productName'] = 'Oatmeal Soap';
+    	$_SESSION['cart'][0]['quantity'] = $oatQuantity;
+    	$_SESSION['cart'][0]['productPrice'] = 11.00;
+    	$_SESSION['cart'][0]['productId'] = 1;
+	}
+
+
 
 	$cartContents = "<div id='shopping-cart'>";
 

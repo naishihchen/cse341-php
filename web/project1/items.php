@@ -21,7 +21,7 @@
   	$queryResults .= "<h3>" . $row['productname'] . "</h3><br>";
 	$queryResults .= "<p>" . $row['productdescription'] . "</p>";
 	$queryResults .= "<label for='points'>Quantity:</label><br>";
-  	$queryResults .= "<input type='number' class='quantity' name='" . $row['productname'] . " quantity' step='1'>";
+  	$queryResults .= "<input type='number' class='quantity' name='" . $row['productname'] . " Quantity' step='1' min='0' onkeypress='return event.charCode >= 48'>";
 	$queryResults .= "</div>";
 }
 	$queryResults .= "<input type='submit' name='submit' id='cartbtn' value='Proceed To Cart'>";
@@ -29,36 +29,6 @@
 
 	$queryResults.= "</form>";
 	$queryResults .= "</div>";
-
-$action = filter_input(INPUT_POST, 'action');
- if ($action == NULL){
-  $action = filter_input(INPUT_GET, 'action');
- }
-switch ($action){
-
-  case 1:
-    $_SESSION['cart'][0]['productName'] = 'Lavender Soap';
-    $_SESSION['cart'][0]['quantity'] = 1;
-    $_SESSION['cart'][0]['productPrice'] = 11.00;
-    $_SESSION['cart'][0]['productId'] = 1;
-  break;
-  
-  case 2:
-    $_SESSION['cart'][1]['productName'] = 'Mint Soap';
-    $_SESSION['cart'][1]['quantity'] = 1;
-    $_SESSION['cart'][1]['productPrice'] = 11.00;
-    $_SESSION['cart'][1]['productId'] = 1;
-  break;
-  
-  case 3:
-    $_SESSION['cart'][2]['productName'] = 'Oatmeal Soap';
-    $_SESSION['cart'][2]['quantity'] = 1;
-    $_SESSION['cart'][2]['productPrice'] = 11.00;
-    $_SESSION['cart'][1]['productId'] = 1;
-  
-  default:
-  break;
-}
 
 ?>
 
