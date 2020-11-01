@@ -6,25 +6,6 @@
   $action = filter_input(INPUT_GET, 'action');
  }
 
- if (isset( $_SESSION['cart'] )){	
-
- 	switch ($action){
-
-	  case 'Lavender Soap':
-	    $_SESSION['cart'][0] = '';
-	  break;
-	  
-	  case 'Mint Soap':
-	    $_SESSION['cart'][1] = '';
-	  break;
-	  
-	  case 'Oatmeal Soap':
-	    $_SESSION['cart'][2] = '';
-	  
-	  default:
-	  break;
-	}
-
 	$lavQuantity = filter_input(INPUT_POST, 'Lavender Soap Quantity', FILTER_SANITIZE_NUMBER_INT);
 	$mintQuantity = filter_input(INPUT_POST, 'Mint Soap Quantity', FILTER_SANITIZE_NUMBER_INT);
 	$oatQuantity = filter_input(INPUT_POST, 'Oatmeal Soap Quantity', FILTER_SANITIZE_NUMBER_INT);
@@ -50,7 +31,28 @@
     	$_SESSION['cart'][0]['productId'] = 1;
 	}
 
+	var_dump($lavQuantity);
+
 	var_dump($_SESSION['cart']);
+
+	if (isset( $_SESSION['cart'] )){	
+
+ 	switch ($action){
+
+	  case 'Lavender Soap':
+	    $_SESSION['cart'][0] = '';
+	  break;
+	  
+	  case 'Mint Soap':
+	    $_SESSION['cart'][1] = '';
+	  break;
+	  
+	  case 'Oatmeal Soap':
+	    $_SESSION['cart'][2] = '';
+	  
+	  default:
+	  break;
+	}
 
 
 	$cartContents = "<div id='shopping-cart'>";
