@@ -232,3 +232,25 @@ footer {
 	margin: 2%;
 }
 
+#client-update {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#updateAccount {
+	width: 70%;
+}
+
+#updateAccount input {
+	margin: 10px;
+}
+
+#password {
+	width: 70%;
+}
+
+#password input {
+	margin: 10px;
+}
