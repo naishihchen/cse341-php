@@ -20,7 +20,7 @@
   	$queryResults .= "<img src='" . $row['productimage'] . "'><br>";
   	$queryResults .= "<h3>" . $row['productname'] . "</h3><br>";
 	$queryResults .= "<p>" . $row['productdescription'] . "</p>";
-	$queryResults .= "<label for='points'>Points:</label>";
+	$queryResults .= "<label for='points'>Quantity:</label><br>";
   	$queryResults .= "<input type='number' class='quantity' name='" . $row['productname'] . " quantity' step='1'>";
 	$queryResults .= "</div>";
 }
