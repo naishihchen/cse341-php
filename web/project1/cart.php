@@ -6,9 +6,9 @@
   $action = filter_input(INPUT_GET, 'action');
  }
 
-	$lavQuantity = filter_input(INPUT_POST, 'Lavender Soap Quantity', FILTER_SANITIZE_NUMBER_FLOAT);
-	$mintQuantity = filter_input(INPUT_POST, 'Mint Soap Quantity', FILTER_SANITIZE_NUMBER_FLOAT);
-	$oatQuantity = filter_input(INPUT_POST, 'Oatmeal Soap Quantity', FILTER_SANITIZE_NUMBER_FLOAT);
+	$lavQuantity = filter_input(INPUT_POST, 'Lavender_Soap_Quantity', FILTER_SANITIZE_NUMBER_FLOAT);
+	$mintQuantity = filter_input(INPUT_POST, 'Mint_Soap_Quantity', FILTER_SANITIZE_NUMBER_FLOAT);
+	$oatQuantity = filter_input(INPUT_POST, 'Oatmeal_Soap_Quantity', FILTER_SANITIZE_NUMBER_FLOAT);
 
 	if ($lavQuantity > 0) {
 		$_SESSION['cart'][0]['productName'] = 'Lavender Soap';
