@@ -170,7 +170,7 @@ $action = filter_input(INPUT_POST, 'action');
     $checkPassword = checkPassword($clientPassword);
     // If the password doesn't match, create an error
     if(!$checkPassword) {
-        $message = '<p class="notice">Please check your password and try again.</p>';
+        $_SESSION['message'] = '<p class="notice">Please check your password and try again.</p>';
         header("Location: /project1/client-update.php");
         exit;
     } else {

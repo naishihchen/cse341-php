@@ -38,6 +38,12 @@
 				echo $queryResults;
 			} ?>
 
+			<?php
+			if (isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
+            }
+            ?>
+
 			<p>Visit our <a href="purchaseSearch.php">Receipt Search</a> page to search for past purchases<p>
 			<br>
 			<a href="accounts/index.php?action=accountUpdate">Update Account Info</a>
