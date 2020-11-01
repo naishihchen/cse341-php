@@ -178,6 +178,10 @@ footer {
 	align-items: center;
 }
 
+#form input {
+	margin: 10px;
+}
+
 #progress-buttons input {
 	margin: 20px;
 }
