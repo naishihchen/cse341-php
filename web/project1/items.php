@@ -12,7 +12,7 @@
 	}
 
 	$queryResults = "<div id='soaps' class='hello'>";
-	$queryResults = "<form action='cart.php' method='post'>"
+	$queryResults = "<form action='cart.php' method='post'>";
 
 	foreach ($db->query('SELECT * FROM products') as $row)
 {
@@ -20,14 +20,14 @@
   	$queryResults .= "<img src='" . $row['productimage'] . "'><br>";
   	$queryResults .= "<h3>" . $row['productname'] . "</h3><br>";
 	$queryResults .= "<p>" . $row['productdescription'] . "</p>";
-	$queryResults .= "<label for='points'>Points:</label>"
-  	$queryResults .= "<input type='number' class='quantity' name='" . $row['productname'] . " quantity' step='1'>"
+	$queryResults .= "<label for='points'>Points:</label>";
+  	$queryResults .= "<input type='number' class='quantity' name='" . $row['productname'] . " quantity' step='1'>";
 	$queryResults .= "</div>";
 }
-	$queryResults .= "<input type='submit' name='submit' id='cartbtn' value='Proceed To Cart'>"
-    $queryResults .= "<input type='hidden' name='action' value='purchase'>"
+	$queryResults .= "<input type='submit' name='submit' id='cartbtn' value='Proceed To Cart'>";
+    $queryResults .= "<input type='hidden' name='action' value='purchase'>";
 
-	$queryResults.= "</form>"
+	$queryResults.= "</form>";
 	$queryResults .= "</div>";
 
 $action = filter_input(INPUT_POST, 'action');
