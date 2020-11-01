@@ -4,8 +4,6 @@
 	if (!isset($_SESSION['loggedin'])) {
 		$_SESSION['loggedin'] = false;
 	}
-	
-	var_dump($_SESSION);
 
 	include 'database_connect.php';
 
