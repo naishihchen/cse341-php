@@ -13,21 +13,21 @@
 	if ($lavQuantity > 0) {
 		$_SESSION['cart'][0]['productName'] = 'Lavender Soap';
     	$_SESSION['cart'][0]['quantity'] = $lavQuantity;
-    	$_SESSION['cart'][0]['productPrice'] = 11.00;
+    	$_SESSION['cart'][0]['productPrice'] = $lavQuantity * 11.00;
     	$_SESSION['cart'][0]['productId'] = 1;
 	}
 
 	if ($mintQuantity > 0) {
 		$_SESSION['cart'][1]['productName'] = 'Mint Soap';
     	$_SESSION['cart'][1]['quantity'] = $mintQuantity;
-    	$_SESSION['cart'][1]['productPrice'] = 11.00;
+    	$_SESSION['cart'][1]['productPrice'] = $mintQuantity * 11.00;
     	$_SESSION['cart'][1]['productId'] = 1;
 	}
 
 	if ($oatQuantity > 0) {
 		$_SESSION['cart'][2]['productName'] = 'Oatmeal Soap';
     	$_SESSION['cart'][2]['quantity'] = $oatQuantity;
-    	$_SESSION['cart'][2]['productPrice'] = 11.00;
+    	$_SESSION['cart'][2]['productPrice'] = $oatQuantity * 11.00;
     	$_SESSION['cart'][2]['productId'] = 1;
 	}
 
