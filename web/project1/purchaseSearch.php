@@ -32,7 +32,7 @@ $product = htmlspecialchars($_GET["product"]);
                             echo "<p>Product: " . $product . "</p><br>";
                             echo "<p> Time of Purchase: " . $row['purchasetime'] . "</p><br>";
                             echo "<p>Quantity:  " . $row['quantity'] . "</p><br>";
-                            echo "<p>Price: " . $row['purchaseprice'] . "</p>";
+                            echo "<p>Price: $" . $row['purchaseprice'] . "</p>";
                             echo '</div>';
                         }
                     }
