@@ -53,6 +53,7 @@
                     echo $message;
                     }
                 ?>
+                <br>
                 
                 <form method="post" action="accounts/index.php">
                     <span>Entering a password here will change the current password. Password must not be the same as the old password. Password must be 8 characters long, contain one uppercase letter, one number and one special character.</span>
