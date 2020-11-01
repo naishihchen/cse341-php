@@ -128,12 +128,18 @@ footer {
 .description {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+}
+
+.soap-pic {
+	width: 40%;
 }
 
 .soap-info {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	width: 30%;
 }
 
 #progress-buttons {
