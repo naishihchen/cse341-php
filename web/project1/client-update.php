@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+    include 'database_connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,18 +24,18 @@
                 
             <div id="updateAccount">
                 <?php
-                    if (isset($message)) {
-                    echo $message;
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
                     }
                 ?>
                 
                 <form method="post" action="accounts/index.php">
                     <label for="clientFullname">Full Name: </label><input type="text" name="clientFullname" id="clientFullname" value="<?php if(isset($clientFullname)){echo $clientFullname;} 
-                            elseif(isset($_SESSION['clientData']['clientFullname'])) {echo $_SESSION['clientData']['clientFullname']; } ?>" required><br>
+                            elseif(isset($_SESSION['clientData']['fullname'])) {echo $_SESSION['clientData']['fullname']; } ?>" required><br>
                     <label for="clientUsername">User Name: </label><input type="text" name="clientUsername" id="clientUsername" value="<?php if(isset($clientUsername)){echo $clientUsername;} 
-                            elseif(isset($_SESSION['clientData']['clientUsername'])) {echo $_SESSION['clientData']['clientUsername']; } ?>" required><br>
+                            elseif(isset($_SESSION['clientData']['username'])) {echo $_SESSION['clientData']['username']; } ?>" required><br>
                     <label for="clientEmail">Email address: </label><input type="email" name="clientEmail" id="clientEmail" value="<?php if(isset($clientEmail)){echo $clientEmail;} 
-                            elseif(isset($_SESSION['clientData']['clientEmail'])) {echo $_SESSION['clientData']['clientEmail']; } ?>" required>                
+                            elseif(isset($_SESSION['clientData']['email'])) {echo $_SESSION['clientData']['email']; } ?>" required>                
                 <!-- Add the action name - value pair -->
                 <input type="hidden" name="clientId" value="<?php if(isset($_SESSION['clientData']['clientId'])){ echo $_SESSION['clientData']['clientId'];} 
                         elseif(isset($clientId)){ echo $clientId; } ?>">
