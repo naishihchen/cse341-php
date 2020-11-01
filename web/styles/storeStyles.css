@@ -145,6 +145,12 @@ footer {
 	width: 30%;
 }
 
+#cart-main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
 #progress-buttons {
 	display: flex;
 	justify-content: center;
@@ -225,3 +231,4 @@ footer {
 #purchase-log {
 	margin: 2%;
 }
+

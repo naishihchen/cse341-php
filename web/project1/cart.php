@@ -74,7 +74,7 @@
 		<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/storeHeader.php'; ?>
 		<main>
 			<h2>Shopping Cart</h2>
-			<div id="soaps" class="hello">
+			<div id="cart-main" class="hello">
 				<div class="soap">
 					<?php
 						if(isset($cartContents)){
