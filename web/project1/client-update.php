@@ -37,7 +37,7 @@
                     <label for="clientEmail">Email address: </label><input type="email" name="clientEmail" id="clientEmail" value="<?php if(isset($clientEmail)){echo $clientEmail;} 
                             elseif(isset($_SESSION['clientData']['email'])) {echo $_SESSION['clientData']['email']; } ?>" required>                
                 <!-- Add the action name - value pair -->
-                <input type="hidden" name="clientId" value="<?php if(isset($_SESSION['clientData']['clientId'])){ echo $_SESSION['clientData']['clientId'];} 
+                <input type="hidden" name="clientId" value="<?php if(isset($_SESSION['clientData']['userid'])){ echo $_SESSION['clientData']['userid'];} 
                         elseif(isset($clientId)){ echo $clientId; } ?>">
                 <input type="hidden" name="action" value="updateAccount"> 
                 <input type="submit" value="Update Account">
