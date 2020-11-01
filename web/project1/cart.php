@@ -50,11 +50,10 @@
     	$_SESSION['cart'][0]['productId'] = 1;
 	}
 
+	var_dump($_SESSION['cart']);
 
 
 	$cartContents = "<div id='shopping-cart'>";
-
-	var_dump($_SESSION['cart']);
 
 	foreach($_SESSION['cart'] as $product){
 		if ($product != "") {
